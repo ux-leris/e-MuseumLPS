@@ -11,13 +11,19 @@ import javax.persistence.Inheritance;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-import com.lpsmuseum.dto.scenario.AbstractChallengeItem;
+import com.lpsmuseum.dto.scenario.Answer;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.InheritanceType;
 
-@SuppressWarnings("serial")
 @Entity
-@Inheritance
 @Table(name = "answer")
-public abstract class ChallengeItemDO implements Serializable {
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="DTYPE", discriminatorType=DiscriminatorType.STRING)
+@DiscriminatorValue(value="AnswerDO")
+@SuppressWarnings("serial")
+public class AnswerDO implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -44,6 +50,13 @@ public abstract class ChallengeItemDO implements Serializable {
 		this.description = description;
 	}
 	
-	public abstract AbstractChallengeItem getDto();
+	public Answer getDto() {
+		Answer challengeItem = new Answer();
+		
+		challengeItem.setDescription(description);
+		challengeItem.setId(id);
+		
+		return challengeItem;
+	}
 
 }

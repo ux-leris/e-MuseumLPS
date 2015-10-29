@@ -39,6 +39,8 @@ public class ScenarioBuilder {
 	@SuppressWarnings("rawtypes")
 	public ScenarioBuilder withChallenge(Challenge challenge)
 	{
+		if (challenges == null)
+			challenges = new ArrayList<Challenge>();
 		challenges.add(challenge);
 		return this;
 	}
