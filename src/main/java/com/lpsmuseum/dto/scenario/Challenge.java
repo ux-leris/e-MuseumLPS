@@ -9,7 +9,6 @@ import java.util.List;
 public class Challenge {
 
     private Long challengeId;
-    private Scenario scenario;
     private String description;
 	private List<Answer> answers;
 	private Answer correctAnswer;
@@ -17,23 +16,14 @@ public class Challenge {
     public Challenge() {
     }
     
-    public Challenge(Long challengeId, Scenario scenario) {
+    public Challenge(Long challengeId) {
         this.challengeId = challengeId;
-        this.scenario = scenario;
     }
         
     public void getResults() {
 
     }
-
-    public Scenario getScenario() {
-        return scenario;
-    }
-
-    public void setScenario(Scenario scenario) {
-        this.scenario = scenario;
-    }
-
+	
     public Long getChallengeId() {
         return challengeId;
     }
@@ -75,7 +65,6 @@ public class Challenge {
 			challengeItems.add(answer.getEntity());
 		challengeDO.setAnswers(challengeItems);
         challengeDO.setDescription(getDescription());
-        challengeDO.setScenario(getScenario().getEntity());
         challengeDO.setId(getChallengeId());
 
         return challengeDO;

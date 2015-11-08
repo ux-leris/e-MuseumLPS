@@ -51,12 +51,12 @@ public class AnswerDO implements Serializable {
 	}
 	
 	public Answer getDto() {
-		Answer challengeItem = new Answer();
+		Answer answer = new Answer();
 		
-		challengeItem.setDescription(description);
-		challengeItem.setId(id);
+		answer.setDescription(description);
+		answer.setId(id);
 		
-		return challengeItem;
+		return answer;
 	}
 
 }

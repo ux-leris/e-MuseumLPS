@@ -90,7 +90,7 @@ public class ChallengeServiceTest {
 		ChallengeService instance = new ChallengeService();
 		Challenge result = instance.findById(11L);
 		assertNotNull(result);
-		System.out.println("Scenario: " + result.getScenario().getName());
+		//System.out.println("Scenario: " + result.getScenario().getName());
 		System.out.println("Question: " + result.getDescription());
 		for (Answer answer : result.getAnswers())
 			System.out.println("Answer: " + answer.getDescription());
@@ -150,7 +150,7 @@ public class ChallengeServiceTest {
 		assertNotNull(result);
 		assertNotEquals(0, result.size());
 		for (Challenge challenge : result) {
-			System.out.println("Scenario: " + challenge.getScenario().getName());
+			//System.out.println("Scenario: " + challenge.getScenario().getName());
 			System.out.println("Question: " + challenge.getDescription());
 			for (Answer answer : challenge.getAnswers())
 				System.out.println("Answer: " + answer.getDescription());

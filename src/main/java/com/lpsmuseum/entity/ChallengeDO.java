@@ -33,10 +33,6 @@ public class ChallengeDO implements Serializable {
     @Column(name = "id_challenge")
     private Long id;
     
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_scenario")
-    private ScenarioDO scenario;
-    
     @Column(name = "description")
     private String description;
 	
@@ -55,14 +51,6 @@ public class ChallengeDO implements Serializable {
     
     public void setId(Long id) {
         this.id = id;
-    }
-    
-    public ScenarioDO getScenario() {
-        return scenario;
-    }
-    
-    public void setScenario(ScenarioDO scenario) {
-        this.scenario = scenario;
     }
 
     public String getDescription() {
@@ -92,7 +80,6 @@ public class ChallengeDO implements Serializable {
     public Challenge getDto() {
         Challenge c = new Challenge();
         c.setChallengeId(id);
-        c.setScenario(getScenario().getDto());
         c.setDescription(getDescription());
 		List<Answer> challengeItems = new ArrayList<Answer>();
 		for (AnswerDO answer : answers)

@@ -6,6 +6,7 @@
 		transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<class>com.lpsmuseum.entity.AnnotationDO</class>
+		<class>com.lpsmuseum.entity.AnswerDO</class>
 		<class>com.lpsmuseum.entity.ChallengeDO</class>
 		<class>com.lpsmuseum.entity.ImageDO</class>
 		<class>com.lpsmuseum.entity.MuseologicalObjectDO</class>

@@ -20,10 +20,15 @@ import javax.validation.constraints.NotNull;
 
 import com.lpsmuseum.dto.Scenario;
 import com.lpsmuseum.service.ThemeService;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
+import javax.persistence.DiscriminatorValue;
 
 @Entity
 @Table(name="scenario")
 @Inheritance
+@DiscriminatorColumn(name="DTYPE", discriminatorType=DiscriminatorType.STRING)
+@DiscriminatorValue(value="ScenarioDO")
 @SuppressWarnings("serial")
 public class ScenarioDO implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
