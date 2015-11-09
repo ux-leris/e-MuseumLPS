@@ -1,4 +1,4 @@
-package com.lpsmuseum.entity;
+	package com.lpsmuseum.entity;
 
 import com.lpsmuseum.dto.scenario.Challenge;
 import com.lpsmuseum.dto.scenario.Answer;

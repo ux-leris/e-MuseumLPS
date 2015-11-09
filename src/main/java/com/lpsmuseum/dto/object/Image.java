@@ -16,7 +16,7 @@ public class Image extends MuseologicalObject {
 		this.urlAddress = urlAddress;
 	}
 
-	@Override
+	/*@Override
 	public MuseologicalObjectDO getEntity(){
 		ImageDO objDO = new ImageDO();
 		if(getId() != null) objDO.setId(getId());
@@ -25,5 +25,5 @@ public class Image extends MuseologicalObject {
 		objDO.setObjectType(getObjectType());
 		objDO.setUrlAddress(urlAddress);
 		return objDO;
-	}
+	}*/
 }

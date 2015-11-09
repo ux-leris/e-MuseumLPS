@@ -81,7 +81,7 @@ public class Scenario {
 		return objects;
 	}
 	
-	public ScenarioDO getEntity() throws Exception{
+	/*public ScenarioDO getEntity() throws Exception{
 		ScenarioDO scenarioDO = new ScenarioDO();
 		scenarioDO.setName(getName());
 		scenarioDO.setId(getId());
@@ -99,7 +99,7 @@ public class Scenario {
 		}
 		scenarioDO.setTheme(new ThemeService().getEntity(theme));
 		return scenarioDO;
-	}
+	}*/
 
 	public Long getIdMuseum() {
 		return idMuseum;

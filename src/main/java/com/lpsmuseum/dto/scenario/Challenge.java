@@ -56,7 +56,7 @@ public class Challenge {
 		this.correctAnswer = correctAnswer;
 	}
 
-    public ChallengeDO getEntity() throws Exception {
+    /*public ChallengeDO getEntity() throws Exception {
         ChallengeDO challengeDO = new ChallengeDO();
         
         challengeDO.setCorrectAnswer(getCorrectAnswer().getEntity());
@@ -68,5 +68,5 @@ public class Challenge {
         challengeDO.setId(getChallengeId());
 
         return challengeDO;
-    }
+    }*/
 }

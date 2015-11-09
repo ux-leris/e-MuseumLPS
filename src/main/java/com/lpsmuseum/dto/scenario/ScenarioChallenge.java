@@ -18,7 +18,7 @@ public class ScenarioChallenge extends Scenario {
 		return challenges;
 	}
 
-	public void setChallenges(List<Challenge> challenge) {
+	public void setChallenges(List<Challenge> challenges) {
 		this.challenges = challenges;
 	}
 	

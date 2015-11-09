@@ -14,9 +14,9 @@ public class ChallengeService {
     ChallengeDAO dao = new ChallengeDAO();
 	
 	public void createChallenge(Challenge challenge) throws Exception{
-		ChallengeDO chalDO = challenge.getEntity();
+		/*ChallengeDO chalDO = challenge.getEntity();
 		dao.createChallenge(chalDO);
-		challenge.setChallengeId(chalDO.getId());
+		challenge.setChallengeId(chalDO.getId());*/
 	}
 	
 	public Challenge findById(Long id) throws Exception {
@@ -27,8 +27,8 @@ public class ChallengeService {
 	}
 	
 	public void editChallenge(Challenge challenge) throws Exception{
-		ChallengeDO objDO = challenge.getEntity();
-		dao.editChallenge(objDO);
+		/*ChallengeDO objDO = challenge.getEntity();
+		dao.editChallenge(objDO);*/
 	}
 	
 	public Challenge findChallenge(Challenge challenge) throws Exception{

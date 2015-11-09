@@ -22,13 +22,13 @@ public class Answer {
 		this.description = description;
 	}
 	
-	public AnswerDO getEntity() throws Exception {
+	/*public AnswerDO getEntity() throws Exception {
 		AnswerDO challengeItemDO = new AnswerDO();
 		
 		challengeItemDO.setDescription(description);
 		challengeItemDO.setId(id);
 		
 		return challengeItemDO;
-	}
+	}*/
 	
 }

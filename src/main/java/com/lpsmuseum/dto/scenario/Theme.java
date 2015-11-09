@@ -25,11 +25,11 @@ public class Theme {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public ThemeDO getEntity() {
+	/*public ThemeDO getEntity() {
 		ThemeDO tdo = new ThemeDO();
 		tdo.setId(id);
 		tdo.setTitle(title);
 		tdo.setDescription(description);
 		return tdo;
-	}
+	}*/
 }

@@ -16,6 +16,8 @@ import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 @Table(name = "answer")
@@ -33,6 +35,12 @@ public class AnswerDO implements Serializable {
 	@NotNull
 	@Column(name = "description")
 	private String description;
+	
+	/*
+	@OneToOne
+	@JoinColumn(name = "id_challenge")
+	private ScenarioDO scenario;
+	*/
 
 	public Long getId() {
 		return id;
@@ -49,7 +57,15 @@ public class AnswerDO implements Serializable {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
+/*
+	public ScenarioDO getScenario() {
+		return scenario;
+	}
+
+	public void setScenario(ScenarioDO scenario) {
+		this.scenario = scenario;
+	}
+*/	
 	public Answer getDto() {
 		Answer answer = new Answer();
 		
