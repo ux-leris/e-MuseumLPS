@@ -33,7 +33,7 @@ public class Node implements Serializable {
 	
 	public Node doBacktrack() {
 		Node backtrack = this.backtrack;
-		this.backtrack = null;
+		//this.backtrack = null;
 		return backtrack;
 	}
 
