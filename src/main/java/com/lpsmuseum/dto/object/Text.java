@@ -16,8 +16,8 @@ public class Text extends MuseologicalObject {
 		this.text = text;
 	}
 
-	/*@Override
-	public MuseologicalObjectDO getEntity() {
+	@Override
+	public TextDO getEntity() {
 		TextDO objDO = new TextDO();
 		if(getId() != null) objDO.setId(getId());
 		objDO.setName(getName());
@@ -25,6 +25,6 @@ public class Text extends MuseologicalObject {
 		objDO.setObjectType(getObjectType());
 		objDO.setText(text);
 		return objDO;
-	}*/
+	}
 
 }

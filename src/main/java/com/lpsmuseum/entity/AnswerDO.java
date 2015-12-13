@@ -36,11 +36,8 @@ public class AnswerDO implements Serializable {
 	@Column(name = "description")
 	private String description;
 	
-	/*
-	@OneToOne
-	@JoinColumn(name = "id_challenge")
-	private ScenarioDO scenario;
-	*/
+	@Column(name = "correct")
+	private Boolean correct;
 
 	public Long getId() {
 		return id;
@@ -57,20 +54,21 @@ public class AnswerDO implements Serializable {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-/*
-	public ScenarioDO getScenario() {
-		return scenario;
+
+	public Boolean getCorrect() {
+		return correct;
 	}
 
-	public void setScenario(ScenarioDO scenario) {
-		this.scenario = scenario;
+	public void setCorrect(Boolean correct) {
+		this.correct = correct;
 	}
-*/	
+	
 	public Answer getDto() {
 		Answer answer = new Answer();
 		
 		answer.setDescription(description);
 		answer.setId(id);
+		answer.setCorrect(correct);
 		
 		return answer;
 	}

@@ -1,7 +1,6 @@
 package com.lpsmuseum.entity;
 
 import com.lpsmuseum.dto.MuseologicalObject;
-import com.lpsmuseum.dto.Scenario;
 import com.lpsmuseum.dto.scenario.Challenge;
 import com.lpsmuseum.dto.scenario.ScenarioChallenge;
 import java.util.ArrayList;
@@ -13,7 +12,6 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 
 @Entity
 @DiscriminatorValue(value = "ScenarioChallengeDO")

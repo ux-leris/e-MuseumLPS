@@ -81,7 +81,7 @@ public class Scenario {
 		return objects;
 	}
 	
-	/*public ScenarioDO getEntity() throws Exception{
+	public ScenarioDO getEntity() throws Exception{
 		ScenarioDO scenarioDO = new ScenarioDO();
 		scenarioDO.setName(getName());
 		scenarioDO.setId(getId());
@@ -97,9 +97,9 @@ public class Scenario {
 			if(objDO != null) scenarioDO.getObjects().add(objDO);
 			else throw new Exception("Could not find object " + obj.getName() + "!");
 		}
-		scenarioDO.setTheme(new ThemeService().getEntity(theme));
+		scenarioDO.setTheme(theme.getEntity());
 		return scenarioDO;
-	}*/
+	}
 
 	public Long getIdMuseum() {
 		return idMuseum;

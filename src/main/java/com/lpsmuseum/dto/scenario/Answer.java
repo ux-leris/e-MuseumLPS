@@ -5,6 +5,7 @@ import com.lpsmuseum.entity.AnswerDO;
 public class Answer {
 	private Long id;
 	private String description;
+	private Boolean correct;
 	
 	public Long getId() {
 		return id;
@@ -21,14 +22,23 @@ public class Answer {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
+	public Boolean isCorrect() {
+		return correct;
+	}
+
+	public void setCorrect(Boolean correct) {
+		this.correct = correct;
+	}
 	
-	/*public AnswerDO getEntity() throws Exception {
-		AnswerDO challengeItemDO = new AnswerDO();
+	public AnswerDO getEntity() throws Exception {
+		AnswerDO answerDO = new AnswerDO();
+	
+		answerDO.setCorrect(correct);
+		answerDO.setDescription(description);
+		answerDO.setId(id);
 		
-		challengeItemDO.setDescription(description);
-		challengeItemDO.setId(id);
-		
-		return challengeItemDO;
-	}*/
+		return answerDO;
+	}
 	
 }

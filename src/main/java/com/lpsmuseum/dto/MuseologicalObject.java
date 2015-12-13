@@ -159,7 +159,7 @@ public class MuseologicalObject {
 	 * 
 	 * @return a MuseologicalObjectDO object representing this museological object.
 	 * @see MuseologicalObjectDO
-	 *//*
+	 */
 	public MuseologicalObjectDO getEntity(){
 		MuseologicalObjectDO objDO = new MuseologicalObjectDO();
 		if(objectId != null) objDO.setId(objectId);
@@ -167,5 +167,5 @@ public class MuseologicalObject {
 		objDO.setDate(date.getTime());
 		objDO.setObjectType(objectType);
 		return objDO;
-	}*/
+	}
 }

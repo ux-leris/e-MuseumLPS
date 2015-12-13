@@ -62,7 +62,7 @@ public class Museum {
 		return scenarios;
 	}
 
-	/*public MuseumDO getEntity() throws Exception {
+	public MuseumDO getEntity() throws Exception {
 		MuseumDO mdo = new MuseumDO();
 		
 		mdo.setId(id);
@@ -73,5 +73,5 @@ public class Museum {
 		mdo.setScenarios(sdos);
 		
 		return mdo;
-	}*/
+	}
 }
