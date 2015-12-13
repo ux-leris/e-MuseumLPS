@@ -22,19 +22,19 @@ public class ImageService extends MuseologicalObjectService {
     ImageDAO dao = new ImageDAO();
 	
     public void createObject(Image object){
-        ImageDO objDO = (ImageDO)object.getEntity();
+        /*ImageDO objDO = (ImageDO)object.getEntity();
         dao.createObject(objDO);
         
         object.setId(objDO.getId());
         object.setName(objDO.getName());
        // object.setDate(objDO.getDate().getTime());
         object.setObjectType(objDO.getObjectType());
-        object.setUrlAddress(objDO.getUrlAddress());
+        object.setUrlAddress(objDO.getUrlAddress());*/
     }
 
     public void editObject(Image object){
-        ImageDO objDO = (ImageDO)object.getEntity();
-        dao.editObject(objDO);
+        /*ImageDO objDO = (ImageDO)object.getEntity();
+        dao.editObject(objDO);*/
     }
 
     public Image findObject(Image object){

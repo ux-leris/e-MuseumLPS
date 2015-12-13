@@ -34,15 +34,15 @@ public class ThemeService {
 		return themes;
 	}
 
-	public Theme findById(Long id) {
+	/*public Theme findById(Long id) {
 		Theme t = new Theme();
 		t.setId(id);
 		ThemeDO tdo = findEntity(t);
 		return tdo.getDto();
-	}
+	}*/
 
-	private ThemeDO findEntity(Theme theme) {
+	/*private ThemeDO findEntity(Theme theme) {
 		ThemeDO objDO = theme.getEntity();
 		return (ThemeDO) dao.findEntity(objDO);
-	}
+	}*/
 }

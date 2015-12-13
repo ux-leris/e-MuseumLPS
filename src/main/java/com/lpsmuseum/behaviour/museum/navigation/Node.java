@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.lpsmuseum.dto.Scenario;
+import java.io.Serializable;
 
-public class Node {
+public class Node implements Serializable {
 	private Scenario scenario;
 	private List<Node> neighbors = new ArrayList<Node>();
 	private Node backtrack = null;
@@ -32,7 +33,7 @@ public class Node {
 	
 	public Node doBacktrack() {
 		Node backtrack = this.backtrack;
-		this.backtrack = null;
+		//this.backtrack = null;
 		return backtrack;
 	}
 

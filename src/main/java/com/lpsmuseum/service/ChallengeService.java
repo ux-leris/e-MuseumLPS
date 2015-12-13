@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.lpsmuseum.service;
 
 import com.lpsmuseum.dao.ChallengeDAO;
@@ -19,9 +14,9 @@ public class ChallengeService {
     ChallengeDAO dao = new ChallengeDAO();
 	
 	public void createChallenge(Challenge challenge) throws Exception{
-		ChallengeDO chalDO = challenge.getEntity();
+		/*ChallengeDO chalDO = challenge.getEntity();
 		dao.createChallenge(chalDO);
-		challenge.setChallengeId(chalDO.getId());
+		challenge.setChallengeId(chalDO.getId());*/
 	}
 	
 	public Challenge findById(Long id) throws Exception {
@@ -32,8 +27,8 @@ public class ChallengeService {
 	}
 	
 	public void editChallenge(Challenge challenge) throws Exception{
-		ChallengeDO objDO = challenge.getEntity();
-		dao.editChallenge(objDO);
+		/*ChallengeDO objDO = challenge.getEntity();
+		dao.editChallenge(objDO);*/
 	}
 	
 	public Challenge findChallenge(Challenge challenge) throws Exception{

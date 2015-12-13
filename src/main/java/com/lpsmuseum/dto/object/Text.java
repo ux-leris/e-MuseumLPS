@@ -17,8 +17,8 @@ public class Text extends MuseologicalObject {
 	}
 
 	@Override
-	public MuseologicalObjectDO getEntity() {
-		TextDO objDO = new TextDO();
+	public TextDO getEntity() {
+			TextDO objDO = new TextDO();
 		if(getId() != null) objDO.setId(getId());
 		objDO.setName(getName());
 		objDO.setDate(getDate().getTime());

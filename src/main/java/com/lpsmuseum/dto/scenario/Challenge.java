@@ -1,67 +1,63 @@
 package com.lpsmuseum.dto.scenario;
 
-import com.lpsmuseum.dto.Scenario;
 import com.lpsmuseum.entity.ChallengeDO;
+import com.lpsmuseum.entity.AnswerDO;
+import java.util.ArrayList;
+import java.util.List;
+import static org.eclipse.persistence.sessions.remote.corba.sun.TransporterHelper.id;
 
 public class Challenge {
 
-    private Long challengeId;
-    private Scenario scenario;
-    private String answer;
-    private String description;
-    
-    public Challenge() {
-    }
-    
-    public Challenge(Long challengeId, Scenario scenario) {
-        this.challengeId = challengeId;
-        this.scenario = scenario;
-    }
-        
-    public void getResults() {
+	private Long challengeId;
+	private String description;
+	private List<Answer> answers;
 
-    }
+	public Challenge() {
+	}
 
-    public Scenario getScenario() {
-        return scenario;
-    }
+	public Challenge(Long challengeId) {
+		this.challengeId = challengeId;
+	}
 
-    public void setScenario(Scenario scenario) {
-        this.scenario = scenario;
-    }
+	public void getResults() {
 
-    public Long getChallengeId() {
-        return challengeId;
-    }
+	}
 
-    public void setChallengeId(Long challengeId) {
-        this.challengeId = challengeId;
-    }
+	public Long getChallengeId() {
+		return challengeId;
+	}
 
-    public String getAnswer() {
-        return answer;
-    }
+	public void setChallengeId(Long challengeId) {
+		this.challengeId = challengeId;
+	}
 
-    public void setAnswer(String answer) {
-        this.answer = answer;
-    }
+	public String getDescription() {
+		return description;
+	}
 
-    public String getDescription() {
-        return description;
-    }
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+	public List<Answer> getAnswers() {
+		return answers;
+	}
 
-    public ChallengeDO getEntity() throws Exception {
-        ChallengeDO challengeDO = new ChallengeDO();
-        
-        challengeDO.setAnswer(getAnswer());
-        challengeDO.setDescription(getDescription());
-        challengeDO.setScenario(getScenario().getEntity());
-        challengeDO.setId(getChallengeId());
+	public void setAnswers(List<Answer> answers) {
+		this.answers = answers;
+	}
 
-        return challengeDO;
-    }
+	public ChallengeDO getEntity() throws Exception {
+		ChallengeDO challengeDO = new ChallengeDO();
+
+		List<AnswerDO> challengeItems = new ArrayList<AnswerDO>();
+		for (Answer answer : answers) {
+			challengeItems.add(answer.getEntity());
+		}
+		challengeDO.setAnswers(challengeItems);
+		challengeDO.setDescription(description);
+		challengeDO.setId(challengeId);
+
+		return challengeDO;
+	}
 }

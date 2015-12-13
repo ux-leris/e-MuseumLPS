@@ -97,7 +97,7 @@ public class Scenario {
 			if(objDO != null) scenarioDO.getObjects().add(objDO);
 			else throw new Exception("Could not find object " + obj.getName() + "!");
 		}
-		scenarioDO.setTheme(new ThemeService().getEntity(theme));
+		scenarioDO.setTheme(theme.getEntity());
 		return scenarioDO;
 	}
 

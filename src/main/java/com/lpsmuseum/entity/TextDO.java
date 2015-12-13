@@ -5,6 +5,11 @@
  */
 package com.lpsmuseum.entity;
 
+import com.lpsmuseum.dto.MuseologicalObject;
+import com.lpsmuseum.dto.object.Image;
+import com.lpsmuseum.dto.object.Text;
+import com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type;
+import java.util.Calendar;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
@@ -25,4 +30,19 @@ public class TextDO extends MuseologicalObjectDO {
     public void setText(String text) {
         this.text = text;
     }
+
+	@Override
+	public MuseologicalObject getDto() {
+		Text text = new Text();
+		text.setId(getId());
+		text.setName(getName());
+		Calendar c = Calendar.getInstance();
+		c.setTime(getDate());
+		text.setDate(c);
+		text.setObjectType(getObjectType());
+		text.setText(this.text);
+		return text;
+	}
+	
+	
 }

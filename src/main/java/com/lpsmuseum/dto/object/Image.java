@@ -17,7 +17,7 @@ public class Image extends MuseologicalObject {
 	}
 
 	@Override
-	public MuseologicalObjectDO getEntity(){
+	public ImageDO getEntity(){
 		ImageDO objDO = new ImageDO();
 		if(getId() != null) objDO.setId(getId());
 		objDO.setName(getName());
