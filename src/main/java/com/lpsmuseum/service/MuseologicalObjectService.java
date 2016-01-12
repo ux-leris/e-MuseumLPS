@@ -12,9 +12,9 @@ public class MuseologicalObjectService {
 	MuseologicalObjectDAO dao = new MuseologicalObjectDAO();
 	
 	public void createObject(MuseologicalObject object){
-		/*MuseologicalObjectDO objDO = object.getEntity();
+		MuseologicalObjectDO objDO = object.getEntity();
 		dao.createObject(objDO);
-		object.setId(objDO.getId());*/
+		object.setId(objDO.getId());
 	}
 	
 	public MuseologicalObject findById(Long id) {
@@ -25,8 +25,8 @@ public class MuseologicalObjectService {
 	}
 	
 	public void editObject(MuseologicalObject object){
-		/*MuseologicalObjectDO objDO = object.getEntity();
-		dao.editObject(objDO);*/
+		MuseologicalObjectDO objDO = object.getEntity();
+		dao.editObject(objDO);
 	}
 	
 	public MuseologicalObject findObject(MuseologicalObject object){

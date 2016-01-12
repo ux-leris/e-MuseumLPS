@@ -11,9 +11,9 @@ public class ScenarioService {
 	ScenarioDAO dao = new ScenarioDAO();
 	
 	public void createScenario(Scenario scenario) throws Exception{
-		/*ScenarioDO scenarioDO = scenario.getEntity();
+		ScenarioDO scenarioDO = scenario.getEntity();
 		dao.createScenario(scenarioDO);
-		scenario.setId(scenarioDO.getId());*/
+		scenario.setId(scenarioDO.getId());
 	}
 	
 	public Scenario findById(Long id){
@@ -38,8 +38,8 @@ public class ScenarioService {
 	}
 
 	public void editScenario(Scenario scenario) throws Exception {
-		/*ScenarioDO sdo = scenario.getEntity();
-		dao.editScenario(sdo);*/
+		ScenarioDO sdo = scenario.getEntity();
+		dao.editScenario(sdo);
 	}
 	
 	public ArrayList<Scenario> listScenarios(){
