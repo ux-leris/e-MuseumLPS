@@ -1,48 +1,61 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.lpsmuseum.entity;
 
 import com.lpsmuseum.dto.MuseologicalObject;
-import com.lpsmuseum.dto.object.Image;
 import com.lpsmuseum.dto.object.Text;
-import com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type;
 import java.util.Calendar;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
 /**
+ * An entity class for text's table (that is a specialization of <code>
+ * Museological Object</code>). The table has this columns added:
+ * <ul>
+ * <li>A text
+ * </ul>
  *
- * @author Luis Eduardo
+ * @serial
+ * @see MuseologicalObjectDO
  */
 @Entity
-@SuppressWarnings("serial")
 public class TextDO extends MuseologicalObjectDO {
-    @Column(name="text")
-    String text;
 
-    public String getText() {
-        return text;
-    }
+	/**
+	 * This fields represents the text. The column's name is <code>text</code>.
+	 */
+	@Column(name = "text")
+	String text;
 
-    public void setText(String text) {
-        this.text = text;
-    }
+	/**
+	 * Returns the text for this object.
+	 * 
+	 * @return the text for this object.
+	 */
+	public String getText() {
+		return text;
+	}
+
+	/**
+	 * Sets the text for this object.
+	 * 
+	 * @param text the text for this object.
+	 */
+	public void setText(String text) {
+		this.text = text;
+	}
 
 	@Override
 	public MuseologicalObject getDto() {
-		Text text = new Text();
-		text.setId(getId());
-		text.setName(getName());
+		Text t = new Text();
+		
+		t.setId(getId());
+		t.setName(getName());
 		Calendar c = Calendar.getInstance();
 		c.setTime(getDate());
-		text.setDate(c);
-		text.setObjectType(getObjectType());
-		text.setText(this.text);
-		return text;
+		t.setDate(c);
+		t.setObjectType(getObjectType());
+		t.setText(text);
+		
+		return t;
 	}
-	
-	
+
 }
