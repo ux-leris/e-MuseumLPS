@@ -11,9 +11,10 @@ import com.lpsmuseum.dto.object.Image;
 
 /**
  * An entity class for image's table (that is a specialization of <code>
- * Museological Object</code>). The table has this columns added:
+ * Museological Object</code>). This entity add this columns to <code>
+ * museological_object</code>:
  * <ul>
- * <li>A url address to the image's file
+ * <li>An url address to the image's file
  * </ul>
  *
  * @serial
@@ -30,6 +31,12 @@ public class ImageDO extends MuseologicalObjectDO {
 	 */
 	@Column(name = "urlAddress")
 	String urlAddress;
+
+	/**
+	 * Class constructor.
+	 */
+	public ImageDO() {
+	}
 
 	/**
 	 * Returns the url address to the image's file.

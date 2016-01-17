@@ -8,7 +8,8 @@ import javax.persistence.Entity;
 
 /**
  * An entity class for text's table (that is a specialization of <code>
- * Museological Object</code>). The table has this columns added:
+ * Museological Object</code>). This entity add this columns to <code>
+ * museological_object</code>:
  * <ul>
  * <li>A text
  * </ul>
@@ -24,6 +25,12 @@ public class TextDO extends MuseologicalObjectDO {
 	 */
 	@Column(name = "text")
 	String text;
+
+	/**
+	 * Class constructor.
+	 */
+	public TextDO() {
+	}
 
 	/**
 	 * Returns the text for this object.

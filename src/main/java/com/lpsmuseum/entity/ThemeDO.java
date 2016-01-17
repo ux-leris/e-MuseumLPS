@@ -12,8 +12,8 @@ import javax.persistence.Table;
 import com.lpsmuseum.dto.scenario.Theme;
 
 /**
- * An entity class for theme's table (with name theme). The table has columns
- * for:
+ * An entity class for theme's table (with name <code>theme</code>). The table 
+ * has columns for:
  * <ul>
  * <li>An id
  * <li>A title

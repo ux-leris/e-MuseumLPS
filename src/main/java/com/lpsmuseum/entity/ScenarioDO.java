@@ -25,8 +25,8 @@ import javax.persistence.DiscriminatorType;
 import javax.persistence.DiscriminatorValue;
 
 /**
- * An entity class for scenario's table (with name scenario). The table has
- * columns for:
+ * An entity class for scenario's table (with name <code>scenario</code>). The 
+ * table has columns for:
  * <ul>
  * <li>An id
  * <li>A name
@@ -38,9 +38,9 @@ import javax.persistence.DiscriminatorValue;
  * Regardless of this, the scenario's table has one many-to-many relationship
  * with museological object's table, whom generated the table scenario_object.
  * <p>
- * This entity can be specialized to represent scenarios with challenges. For
- * such, this entity has a <u>type descriminator</u> column of type String and
- * the possible values are:
+ * This entity can be specialized to represent <b>scenarios with challenges</b>
+ * . For such, this entity has a <u>type descriminator</u> column of type 
+ * <code>String</code> and the possible values are:
  * <ul>
  * <li>ScenarioDO: for scenarios without challenges
  * <li>ScenarioChallengeDO: for scenarios with challenges
@@ -48,6 +48,7 @@ import javax.persistence.DiscriminatorValue;
  *
  * @serial
  * @see ScenarioChallengeDO
+ * @see MuseologicalObjectDO
  */
 @Entity
 @Table(name = "scenario")
@@ -175,7 +176,7 @@ public class ScenarioDO implements Serializable {
 	}
 
 	/**
-	 * Returns the museum what this is related.
+	 * Returns the museum (entity like) what this is related.
 	 *
 	 * @return the museum what this is related.
 	 */
@@ -184,7 +185,7 @@ public class ScenarioDO implements Serializable {
 	}
 
 	/**
-	 * Sets the museum what this is related.
+	 * Sets the museum (entity like) what this is related.
 	 *
 	 * @param museum the museum what this is related.
 	 */
@@ -193,7 +194,7 @@ public class ScenarioDO implements Serializable {
 	}
 
 	/**
-	 * Returns the theme of this scenario.
+	 * Returns the theme (entity like) of this scenario.
 	 *
 	 * @return the theme of this scenario.
 	 */
@@ -202,7 +203,7 @@ public class ScenarioDO implements Serializable {
 	}
 
 	/**
-	 * Sets the theme of this scenario.
+	 * Sets the theme (entity like) of this scenario.
 	 *
 	 * @param theme the theme of this scenario.
 	 */

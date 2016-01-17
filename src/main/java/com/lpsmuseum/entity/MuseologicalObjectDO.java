@@ -23,7 +23,7 @@ import com.lpsmuseum.dto.MuseologicalObject;
 
 /**
  * An entity class for museological object's table (with name
- * museological_object). The table has columns for:
+ * <code>museological_object</code>). The table has columns for:
  * <ul>
  * <li>An id
  * <li>A name
@@ -34,7 +34,7 @@ import com.lpsmuseum.dto.MuseologicalObject;
  * <p>
  * This entity can be <b>specialized</b> to represent <u>image</u> or <u>text
  * </u>. For such, this entity has a <u>type descriminator</u> column of type
- * String and the possible values are:
+ * <code>String</code> and the possible values are:
  * <ul>
  * <li>ImageDO: for museological objects that is an image.
  * <li>TextDO: for museological objects that is a text.

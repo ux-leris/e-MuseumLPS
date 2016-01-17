@@ -17,15 +17,15 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 /**
- * An entity class for museum's table (with name museum). The table has columns
- * for:
+ * An entity class for museum's table (with name <code>museum</code>). The 
+ * table has columns for:
  * <ul>
  * <li>An id
  * <li>A name
  * </ul>
  * <p>
- * Regardless of this, in the scenario's table has an column for the one-to-many
- * relationship between them.
+ * Regardless of this, in the scenario's table has an column for the 
+ * one-to-many relationship between them.
  *
  * @serial
  * @see ScenarioDO
