@@ -143,7 +143,7 @@ public class Museum {
 	 * 
 	 * @return the entity representation (<code>MuseumDO</code>) for this <code>
 	 * Museum</code> instance.
-	 * @throws Exception If <code>Scenario.getEntity</code> rises a exception.
+	 * @throws Exception if <code>Scenario.getEntity</code> rises a exception.
 	 * @see MuseumDO
 	 * @see Scenario
 	 */

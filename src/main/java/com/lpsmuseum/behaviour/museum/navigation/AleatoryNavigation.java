@@ -6,10 +6,26 @@ import java.util.Random;
 import com.lpsmuseum.behaviour.museum.Navigation;
 import com.lpsmuseum.dto.Scenario;
 
+/**
+ * This class gives an <b>aleatory navigation</b> to the owner museum.
+ * 
+ * <p>
+ * The aleatory navigation is a randomly sort of scenarios, with the 
+ * possibility to go to whatever scenario what you want, but you can't go back 
+ * to a visited scenario.
+ * 
+ * @see Navigation
+ */
 public class AleatoryNavigation implements Navigation {
 
+	/**
+	 * Class constructor.
+	 */
+	public AleatoryNavigation() {
+	}
+
+	@Override
 	public Node getNavigation(List<Scenario> scenarios) {
-		//TODO: Grafo
 		if (scenarios.isEmpty())
 			return new Node();
 		

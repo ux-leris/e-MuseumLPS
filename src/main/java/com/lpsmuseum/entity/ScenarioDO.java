@@ -229,7 +229,7 @@ public class ScenarioDO implements Serializable {
 		if (museum != null) {
 			s.setIdMuseum(museum.getId());
 		}
-		s.setTheme(new ThemeService().getDto(theme));
+		s.setTheme(theme.getDto());
 
 		return s;
 	}

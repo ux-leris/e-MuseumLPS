@@ -1,5 +1,6 @@
 package com.lpsmuseum.entity;
 
+import com.lpsmuseum.dto.Annotation;
 import java.io.Serializable;
 
 import javax.persistence.Column;
@@ -193,5 +194,26 @@ public class AnnotationDO implements Serializable {
 	 */
 	public void setObject(MuseologicalObjectDO object) {
 		this.object = object;
+	}
+	
+	/**
+	 * Returns the transfer object representing this annotation.
+	 *
+	 * @return the transfer object representing this annotation.
+	 */
+	public Annotation getDto() {
+		Annotation annotation = new Annotation();
+		
+		annotation.setId(id);
+		annotation.setTitle(title);
+		annotation.setContent(content);
+		if (museum != null) {
+			annotation.setIdMuseum(museum.getId());
+		}
+		if (object != null) {
+			annotation.setIdObject(object.getId());
+		}
+		
+		return annotation;
 	}
 }
