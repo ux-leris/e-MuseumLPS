@@ -3,91 +3,149 @@ package com.lpsmuseum.dto;
 import java.util.Calendar;
 
 import com.lpsmuseum.behaviour.object.Indexation;
+import com.lpsmuseum.dto.object.Image;
+import com.lpsmuseum.dto.object.Text;
 import com.lpsmuseum.entity.MuseologicalObjectDO;
 
 /**
- * This class represents a generic museological object, just for transfer 
- * between client-side and server-side.
- * 
- * @author USER
+ * This class represents a <u>generic</u> <b>museological object</b>, just for 
+ * transfer between client-side and server-side.
+ * <p>
+ * This can be <b>specialized</b> to represent <code>Image</code> or <code>Text
+ * </code>.
+ * @see Image
+ * @see Text
  */
 public class MuseologicalObject {
 	
 	/**
-	 * A museological object identification.
+	 * This field represents the museological object's id.
 	 */
 	private Long objectId;
 	
 	/**
-	 * A museological object name.
+	 * This field represents the museological object's name.
 	 */
 	private String name;
 	
 	/**
-	 * A museological object type.
-	 * 
-	 * TODO Why boolean?
+	 * This field represents the museological object's type.
+	 * <p>
+	 * Not has a consensus what stands for this <code>boolean</code> field.
 	 */
 	private Boolean objectType;
 	
 	/**
-	 * A museological object date.
-	 * 
+	 * This fields represents the museological object's date;
+	 * <p>
 	 * The date means when the object is inserted in the database.
 	 */
 	private Calendar date = Calendar.getInstance();
 	
 	/**
-	 * A museological object indexation estrategy.
+	 * This fields represents the museological object's indexation.
 	 * 
 	 * @see Indexation
 	 */
 	private Indexation indexation;
 
 	/**
-	 * Gets the id registered for this museological object.
-	 * 
-	 * @return a Long value representing the id registered for this 
-	 * museological object.
+	 * Class constructor.
+	 */
+	public MuseologicalObject() {
+	}
+
+	/**
+	 * Returns the <code>id</code> of this <code>MuseologicalObject</code> 
+	 * instance.
+	 *
+	 * @return the <code>id</code> of this <code>MuseologicalObject</code> 
+	 * instance.
 	 */
 	public Long getId() {
 		return objectId;
 	}
 
 	/**
-	 * Registers the id for this museological object.
-	 * 
-	 * @param objectId a Long value representing the id to be registered for 
-	 * this museological object.
+	 * Sets the <code>id</code> of this <code>MuseologicalObject</code> 
+	 * instance.
+	 *
+	 * @param objectId the <code>id</code> of this <code>MuseologicalObject
+	 * </code> instance.
 	 */
 	public void setId(Long objectId) {
 		this.objectId = objectId;
 	}
 
 	/**
-	 * Gets the type registered for this museological object.
-     * 
-	 * @return a Boolean value representing the type for this museological object.
+	 * Returns the <code>name</code> of this <code>MuseologicalObject</code> 
+	 * instance.
+	 *
+	 * @return the <code>name</code> of this <code>MuseologicalObject</code> 
+	 * instance.
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * Sets the <code>name</code> of this <code>MuseologicalObject</code> 
+	 * instance.
+	 *
+	 * @param name the <code>name</code> of this <code>MuseologicalObject
+	 * </code> instance.
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	/**
+	 * Returns the type of this <code>MuseologicalObject</code> instance.
+	 *
+	 * @return the type of this <code>MuseologicalObject</code> instance.
 	 */
 	public Boolean getObjectType() {
 		return objectType;
 	}
-	
+
 	/**
-	 * Registers the type for this museological object.
-	 * 
-	 * @param objectType a Boolean value representing the type to be registered 
-	 * for this museological object.
+	 * Sets the type of this <code>MuseologicalObject</code> instance.
+	 *
+	 * @param objectType the type of this <code>MuseologicalObject</code> 
+	 * instance.
 	 */
 	public void setObjectType(Boolean objectType) {
 		this.objectType = objectType;
 	}
 
 	/**
-	 * Gets the indexation strategy registered for this museological object.
+	 * Returns a <code>Calendar</code> object for the date of this <code>
+	 * MuseologicalObject</code> instance.
+	 *
+	 * @return the <code>date</code> of this <code>MuseologicalObject</code> 
+	 * instance.
+	 */
+	public Calendar getDate() {
+		return date;
+	}
+
+	/**
+	 * Sets a <code>Calendar</code> object for the date of this <code>
+	 * MuseologicalObject</code> instance.
+	 *
+	 * @param date the <code>date</code> of this <code>MuseologicalObject
+	 * </code> instance.
+	 */
+	public void setDate(Calendar date) {
+		this.date = date;
+	}
+
+	/**
+	 * Returns the indexation strategy of this <code>MuseologicalObject</code> 
+	 * instance.
 	 * 
-	 * @return a object of Indexation representing the strategy of indexation 
-	 * for this museological object.
+	 * @return the indexation strategy of this <code>MuseologicalObject</code> 
+	 * instance.
 	 * @see Indexation
 	 */
 	public Indexation getIndexation() {
@@ -95,58 +153,23 @@ public class MuseologicalObject {
 	}
 
 	/**
-	 * Registers an indexation strategy for this museological object.
+	 * Sets the indexation strategy of this <code>MuseologicalObject</code> 
+	 * instance.
 	 * 
-	 * @param indexation an indexation strategy to be registered for this 
-	 * museological object.
+	 * @param indexation the indexation strategy of this <code>
+	 * MuseologicalObject</code> instance.
 	 * @see Indexation
 	 */
 	public void setIndexation(Indexation indexation) {
 		this.indexation = indexation;
 	}
-	
-	/**
-	 * Gets the name registered for this museological object.
-	 * 
-	 * @return a name registered for this this museological object.
-	 */
-	public String getName() {
-		return name;
-	}
 
 	/**
-	 * Registers a name for this museological object.
+	 * Creates a generic <code>MuseologicalObject</code> object.
 	 * 
-	 * @param name a String representing the name for this museological object.
-	 */
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	/**
-	 * Gets the date registered for this museological object.
-	 * 
-	 * @return a date registered fot this museological object.
-	 */
-	public Calendar getDate() {
-		return date;
-	}
-
-	/**
-	 * Registers a date for this museological object.
-	 * 
-	 * @param date a Calendar object representing the date for this museological object.
-	 */
-	public void setDate(Calendar date) {
-		this.date = date;
-	}
-
-	/**
-	 * Creates a generic museological object.
-	 * 
-	 * @param name a String value representing the name for this museological object.
-	 * @param date a Calendar object representing the date for this museological object.
-	 * @return this muselogical object with given name and date.
+	 * @param name a String value representing the name.
+	 * @param date a Calendar object representing the date.
+	 * @return this museological object with given name and date.
 	 */
 	public MuseologicalObject createObject(String name, Calendar date) {
 		this.name = name;
@@ -155,9 +178,11 @@ public class MuseologicalObject {
 	}
 	
 	/**
-	 * Gets the entity representation for this museological object.
+	 * Returns the entity representation (<code>MuseologicalObjectDO</code>) 
+	 * for this <code>MuseologicalObject</code> instance.
 	 * 
-	 * @return a MuseologicalObjectDO object representing this museological object.
+	 * @return the entity representation (<code>MuseologicalObjectDO</code>) 
+	 * for this <code>MuseologicalObject</code> instance.
 	 * @see MuseologicalObjectDO
 	 */
 	public MuseologicalObjectDO getEntity(){

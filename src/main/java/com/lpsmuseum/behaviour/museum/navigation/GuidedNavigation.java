@@ -5,10 +5,25 @@ import java.util.List;
 import com.lpsmuseum.behaviour.museum.Navigation;
 import com.lpsmuseum.dto.Scenario;
 
+/**
+ * This class gives an <b>guided navigation</b> to the owner museum.
+ * 
+ * <p>
+ * The guided navigation is a <b>path graph</b> of the <code>scenarios</code> 
+ * of the owner museum.
+ * 
+ * @see Navigation
+ */
 public class GuidedNavigation implements Navigation {
 
+	/**
+	 * Class constructor.
+	 */
+	public GuidedNavigation() {
+	}
+
+	@Override
 	public Node getNavigation(List<Scenario> scenarios) {
-		//TODO: Lista (Fila) de cenários ordenados, retornar o primeiro.
 		if (scenarios.isEmpty())
 			return new Node();
 		
