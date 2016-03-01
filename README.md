@@ -1,4 +1,4 @@
-# lpsmuseum
+# e-MuseumLPS
 
 # Team
 - [Luciana A. M. Zaina](mailto:lzaina@ufscar.br)
