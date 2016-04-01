@@ -1,0 +1,149 @@
+#object-section nav {
+	position: absolute;
+	top: 10px;
+	left: calc(50% - ((52px + 102px + 52px) / 2));
+}
+#object-section nav ul {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+#object-section nav li {
+	display: inline-block;
+}
+#object-section nav div {
+	border: solid #ccc 1px;
+	width: 50px;
+	height: 30px;
+	padding-top: 10px;
+}
+#object-section nav div:not(.nav-sce-location):hover {
+	background-color: #ddd;
+	cursor: pointer;
+}
+#object-section nav div.nav-sce-location {
+	width: 100px;
+}
+a.nav-sce-btn {
+	visibility: hidden;
+}
+#backto {
+	background-image: url(../img/glyphicons-171-step-backward.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#goto {
+	background-image: url(../img/glyphicons-179-step-forward.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#goto a {
+	display: inline-block;
+}
+#goto.last {
+	background-image: url(../img/glyphicons-178-fast-forward.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#object-section > article {
+	position: relative;
+	width: 80%;
+	margin-top: -3%;
+	margin-left: 10%;
+	height: 78%;
+}
+#object-section section {
+	position: relative;
+	margin-top: 14%;
+	margin-left: 5%;
+	padding-top: 0.3%;
+	padding-left: 3%;
+	width: 38%;
+	height: 100%;
+	background-color: #678967;
+	border-radius: 10px;
+}
+
+
+
+
+
+#object-section header {
+	height: 10%;
+	width: 90%;
+}
+#object-section h1 {
+	font-size: 24px;
+	margin: 15px 0px 5px 0px;
+}
+#object-section #object-text {
+	position: absolute;
+	background-color: #458967;
+	top: 48px;
+	width: 87%;
+	height: calc(88% - 24px);
+}
+#object-text div {
+	overflow-y: scroll;
+	padding: 10px;
+	border-radius: 7px;
+}
+#object-text a {
+	position: absolute;
+	margin-top: 1px;
+	margin-left: 53%;
+	font-size: 14px;
+	width: 100px;
+	text-align: right;
+
+}
+#object-section footer {
+	position: absolute;
+	bottom: 7%;
+	width: 87%;
+	height: 27%;
+	background-color: #458967;
+	border-radius: 3px;
+}
+#object-section footer div {
+	overflow-y: scroll;
+	height: 100%;
+	width: 100%;
+	border-radius: 3px;
+}
+#object-section img {
+	position: absolute;
+	top: -20px;
+	left: 49%;
+	height: auto;
+	max-height: 75%;
+	width: 50%;
+	max-width: 50%;
+}
+div.challenge {
+	position: absolute;
+	left: 49%;
+	bottom: 10%;
+}
+.hide {
+	display: none;
+}
+.hide-li div {
+	border-width: 0;
+	color: #eee;
+}
+div.nav-sce-location {
+	cursor: default;
+}
+nav li:not(:first-child):not(:last-child) div {
+	background-color: #456789;
+}
+
+.with-more {
+	height: 58%;
+	max-height: 58%;
+}
+.without-more {
+	height: 95%;
+	max-height: 95%;
+}

@@ -1,0 +1,134 @@
+#menu section {
+    border: solid black 1px;
+    width: 0;
+    z-index: 10;
+}
+#menu-section.show-transition {
+    width: 350px;
+    transition: width 1s;
+}
+#menu-section>header,
+#menu-section>article,
+#menu-section>footer,
+#modal-div {
+    visibility: hidden;
+    opacity: 0;
+    z-index: 9;
+    transition: visibility 0s, opacity 1s linear;
+}
+#menu-section .show-transition,
+#modal-div.show-transition {
+    visibility: visible;
+    opacity: 1;
+    transition: background-color 1s linear;
+}
+.hide-transition {
+    transition: visibility 0s, opacity 1s linear;
+}
+section#menu section, section#menu div {
+    position: absolute;
+    height: 100%;
+}
+section#menu-section header {
+    background-image: url(../img/logo.jpe);
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+section#menu-section ul {
+    padding-left: 20px;
+}
+section#menu-section li li {
+    width: 250px;
+    margin-top: 5px;
+}
+section#menu-section li li li {
+    width: 230px;
+    margin-top: 5px;
+}
+section#menu-section nav>ul>li:not(:first-child)>ul>li:nth-child(2n+1) {
+    background-image: url(../img/glyphicons-602-chevron-down.png);
+    background-position: right;
+    background-repeat: no-repeat;
+}
+section#menu-section nav>ul>li:not(:first-child)>ul>li:nth-child(2n+1):hover {
+    font-size: 20px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+section#menu-section nav>ul>li:not(:first-child)>ul>li:nth-child(2n+1).opened {
+    background-image: url(../img/glyphicons-601-chevron-up.png);
+}
+section#menu-section nav>ul>li:not(:first-child)>ul>li:nth-child(2n) {
+    display: none;
+}
+section#menu-section nav>ul>li:not(:first-child)>ul>li:nth-child(2n).show {
+    display: block;
+    transition: display 1s;
+}
+div#openclose-div {
+    width: 130px;
+    transition: margin-left 1s;
+    z-index: 10;
+}
+div#openclose-div.opened {
+    margin-left: 350px;
+    transition: margin-left 1s;
+}
+div#openclose-div input {
+    border: none;
+    width: 130px;
+    font-size: 30px;
+    text-align: right;
+    margin-top: 1px;
+	margin-left: 1px;
+    background-image: url(../img/glyphicons-517-menu-hamburger.png);
+    background-position: 5px 11px;
+    background-repeat: no-repeat;
+}
+div#openclose-div input.opened {
+    background-image: url(../img/glyphicons-208-remove-2.png);
+}             
+div#modal-div {
+    background-color: rgba(0, 0, 0, 0.9);
+    transition: background-color 1s linear;
+    width: 100%;
+}
+section#menu-section {
+    background-color: #78bc9a;
+}
+section#menu-section header {
+    background-color: white;
+    height: 150px;
+    padding: 10px 17px;
+}
+section#menu-section header img {
+    position: inherit;
+}
+section#menu-section article {
+    z-index: 99;
+    height: calc(100% - 150px - 170px);
+	overflow-y: auto;
+}
+section#menu-section footer {
+    background-color: #458967;
+    height: 150px;
+    width: inherit;
+    margin-top: 0;
+}
+section#menu footer {
+    padding-top: 5px;
+}
+#menu-btn {
+	cursor: hand;
+	cursor: pointer;
+}
+a.clickable:link, 
+a.clickable:visited,  
+a.clickable:active {
+	color: #000;
+	text-decoration: none;
+}
+a.clickable:hover {
+	font-size: 18px;
+	text-decoration: underline;
+}

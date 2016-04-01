@@ -1,0 +1,18 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="challenge" value="${navigationNode.scenario.challenges[0]}" />
+<section id="challenge-section" class="hide">
+	<section>
+		<header>
+			<h2 id="challenge-title">${challenge.description}</h2>
+		</header>
+		<article id="alternatives">
+			<c:forEach items="${challenge.answers}" var="answer">
+				<div class="alternative"><p>${answer.description}</p></div>
+			</c:forEach>
+		</article>
+		<footer>
+			<a id="challenge-cancel" class="button">Cancelar</a>
+			<a id="challenge-done" class="button">Verificar</a>
+		</footer>
+	</section>
+</section>

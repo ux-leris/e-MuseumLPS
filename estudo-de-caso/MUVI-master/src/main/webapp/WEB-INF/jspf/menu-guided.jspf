@@ -1,0 +1,47 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<section id="menu">
+	<section id="menu-section">
+		<header>
+			<a href="/"></a>
+		</header>
+		<article>
+			<nav>
+				<ul>
+					<li>Lei de Diretrizes e Base</li>
+					<li>
+						<ul>
+							<c:forEach items="${museum.themes}" var="theme">
+								<li class="menu-li clickable">${theme.title}</li>
+								<li class="menu-lili">
+									<ul>
+										<c:forEach items="${museum.scenarios}" var="scenario">
+											<c:if test="${scenario.theme.id == theme.id}">
+												<li>${scenario.name}</li>
+												</c:if>
+											</c:forEach>
+									</ul>
+								</li>
+							</c:forEach>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</article>
+		<footer>
+			<ul>
+				<li>Sobre</li>
+				<li>
+					<ul>
+						<li>O projeto</li>
+						<li>O museu</li>
+						<li>A equipe</li>
+					</ul>
+				</li>
+			</ul>
+		</footer>
+	</section>
+	<div id="openclose-div">
+		<input id="menu-btn" class="button" type="button" value="MENU" />
+	</div>
+	<div id="modal-div"></div>
+</section>

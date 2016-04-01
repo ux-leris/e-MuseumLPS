@@ -1,0 +1,972 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>MUVI Nav. Guiada</title>
+        <style>
+            html, body {
+                border: 0px;
+                margin: 0px;
+                padding: 0px;
+                height: 100%;
+                width: 100%;
+                overflow: hidden;
+                background-image: url(Monumento_ao_Tropeiro_Lapa_PR.JPG);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                position: relative;
+                
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+
+                cursor: default;
+            }
+            body > section {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+            ul {
+                list-style: none;
+            }
+            section>article:first-child {
+                position: relative;
+                height: 100%;
+            }
+            article section {
+                position: absolute;
+                top: 13%;
+                height: 79%;
+                left: 23%;
+                width: 54%;
+                background-color: rgba(0, 0, 0, 0.3);
+                border-radius: 10px;
+            }
+            header {
+                position: relative;
+            }
+            #dsf1 header h1,
+            #dsf2 header h1 {
+                font-size: 20px;
+                text-align: center;
+            }
+            #dsf3 header h1,
+            #dsf4 header h1 {
+                font-size: 16px;
+                text-align: center;
+            }
+            section>article:not(:first-child) {
+                position: relative;
+                height: 60%;
+                width: 100%;
+            }
+            article>div>span {
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 25%;
+            }
+            #dsf1alternativa1,
+            #dsf1alternativa2,
+            #dsf1alternativa3,
+            #dsf2alternativa1,
+            #dsf2alternativa2,
+            #dsf2alternativa3,
+            #dsf3alternativa1,
+            #dsf3alternativa2,
+            #dsf3alternativa3,
+            #dsf4alternativa1,
+            #dsf4alternativa2,
+            #dsf4alternativa3,
+            #dsf1finalizar,
+            #dsf2finalizar,
+            #dsf3finalizar,
+            #dsf4finalizar,
+            #dsf1cancelar,
+            #dsf2cancelar,
+            #dsf3cancelar,
+            #dsf4cancelar,
+            #dsf1proximo,
+            #dsf1proximo,
+            #dsf2proximo,
+            #dsf3proximo,
+            #dsf4proximo,
+            #dsf1anterior,
+            #dsf2anterior,
+            #dsf3anterior,
+            #dsf4anterior {
+                cursor: pointer;
+            }
+            #dsf1alternativa1,
+            #dsf2alternativa1,
+            #dsf3alternativa1,
+            #dsf4alternativa1 {
+                position: absolute;
+                top: 0;
+                left: 15%;
+                width: 25%;
+                height: 40%;
+                background-color: rgba(0, 0, 0, 0.5);
+                color: white;
+            }
+            article>div:not(.selected) {
+                border: 1px solid #111;
+            }
+            #dsf3alternativa1 {
+                background-image: url(bolsa.jpe);
+                background-size: 100%;
+            }
+            #dsf4alternativa1 {
+                background-image: url(aparatos.jpg);
+                background-size: 100%;
+            }
+            #dsf1alternativa2,
+            #dsf2alternativa2,
+            #dsf3alternativa2,
+            #dsf4alternativa2 {
+                position: absolute;
+                bottom: 0;
+                margin: 0 37%;
+                width: 25%;
+                height: 40%;
+                text-align: center;
+                background-color: rgba(0, 0, 0, 0.5);
+                color: white;
+            }
+            #dsf3alternativa2 {
+                background-image: url(polchete.jpe);
+                background-size: 100%;
+            }
+            #dsf4alternativa2 {
+                background-image: url(tropa2.jpg);
+                background-size: 100%;
+            }
+            #dsf1alternativa3,
+            #dsf2alternativa3,
+            #dsf3alternativa3,
+            #dsf4alternativa3 {
+                position: absolute;
+                top: 0;
+                right: 15%;
+                width: 25%;
+                height: 40%;
+                text-align: center;
+                background-color: rgba(0, 0, 0, 0.5);
+                color: white;
+            }
+            #dsf3alternativa3 {
+                background-image: url(mochila.jpe);
+                background-size: 100%;
+            }
+            #dsf4alternativa3 {
+                background-image: url(sela.jpg);
+                background-size: 100%;
+            }
+            .selected {
+                border: 1px solid yellow;
+            }
+            footer {
+                position: relative;
+                height: 18.5%;
+                padding-top: 10px;
+            }
+            nav {
+                position: relative;
+                height: 100%;
+            }
+            #dsf1finalizar,
+            #dsf2finalizar,
+            #dsf3finalizar,
+            #dsf4finalizar {
+                position: absolute;
+                top: 0;
+                left: 46%;
+                background-color: rgba(127, 127, 127, 0.7);
+                border-top-left-radius: 50px;
+                border-top-right-radius: 50px;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+                height: 25px;
+                width: 50px;
+                font-size: 8px;
+                text-align: center;
+            }
+            #dsf1finalizar span,
+            #dsf2finalizar span,
+            #dsf3finalizar span,
+            #dsf4finalizar span {
+                position: absolute;
+                bottom: 5px;
+                left: 6px;
+            }
+            #dsf1cancelar,
+            #dsf2cancelar,
+            #dsf3cancelar,
+            #dsf4cancelar {
+                position: absolute;
+                top: 77px;
+                left: 46%;
+                background-color: rgba(127, 127, 127, 0.7);
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                border-bottom-left-radius: 50px;
+                border-bottom-right-radius: 50px;
+                height: 25px;
+                width: 50px;
+                font-size: 8px;
+                text-align: center;
+            }
+            #dsf1cancelar span,
+            #dsf2cancelar span,
+            #dsf3cancelar span,
+            #dsf4cancelar span {
+                position: absolute;
+                top: 5px;
+                left: 6px;
+            }
+            #dsf1anterior,
+            #dsf2anterior,
+            #dsf3anterior,
+            #dsf4anterior {
+                position: absolute;
+                top: 26px;
+                left: 38.5%;
+                background-color: rgba(127, 127, 127, 0.7);
+                border-top-left-radius: 50px;
+                border-top-right-radius: 5px;
+                border-bottom-left-radius: 50px;
+                border-bottom-right-radius: 5px;
+                height: 50px;
+                width: 50px;
+            }
+            #dsf1anterior span,
+            #dsf2anterior span,
+            #dsf3anterior span,
+            #dsf4anterior span {
+                position: absolute;
+                background-image: url(glyphicons-171-step-backward.png);
+                background-repeat: no-repeat;
+                margin: 14px 23px;
+                color: rgba(0, 0, 0, 0);
+            }
+            #dsf1anterior span:hover,
+            #dsf2anterior span:hover,
+            #dsf3anterior span:hover,
+            #dsf4anterior span:hover {
+                cursor: default;
+            }
+            #dsf1proximo,
+            #dsf2proximo,
+            #dsf3proximo,
+            #dsf4proximo {
+                position: absolute;
+                top: 26px;
+                left: 53.5%;
+                background-color: rgba(127, 127, 127, 0.7);
+                border-top-left-radius: 5px;
+                border-top-right-radius: 50px;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 50px;
+                height: 50px;
+                width: 50px;
+            }
+            #dsf1proximo span,
+            #dsf2proximo span,
+            #dsf3proximo span,
+            #dsf4proximo span {
+                position: absolute;
+                background-image: url(glyphicons-179-step-forward.png);
+                background-repeat: no-repeat;
+                margin: 14px 16px;
+                color: rgba(0, 0, 0, 0);
+            }
+            #dsf1proximo span:hover,
+            #dsf2proximo span:hover,
+            #dsf3proximo span:hover,
+            #dsf4proximo span:hover {
+                cursor: default;
+            }
+            #dsf1estado,
+            #dsf2estado,
+            #dsf3estado,
+            #dsf4estado {
+                position: absolute;
+                top: 26px;
+                left: 46%;
+                background-color: rgba(127, 127, 127, 0.7);
+                border-radius: 5px;
+                height: 50px;
+                width: 50px;
+                font-size: 12px;
+                text-align: center;
+
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+            #dsf1estado span,
+            #dsf2estado span,
+            #dsf3estado span,
+            #dsf4estado span {
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding-top: 18px;
+                padding-left: 5px;
+            }
+            .hide {
+                display: none;
+            }
+            .hide-li div {
+                border-width: 0;
+                color: #eee;
+            }
+            .hide-li div:not(.nav-sce-location):hover {
+                background-color: #eee;
+                cursor: default;
+            }
+            a, a:visited, a:active {
+                color: black;
+            }
+        </style>
+
+        <style type="text/css">
+            section#menu section {
+                border: solid black 1px;
+                width: 0;
+                z-index: 10;
+            }
+            section#menu-section.show-transition {
+                width: 350px;
+                transition: width 1s;
+            }
+            section#menu-section>header,
+            section#menu-section>article,
+            section#menu-section>footer,
+            div#modal-div {
+                visibility: hidden;
+                opacity: 0;
+                transition: visibility 0s, opacity 1s linear;
+                z-index: 9;
+            }
+            section#menu-section>header.show-transition,
+            section#menu-section>article.show-transition,
+            section#menu-section>footer.show-transition,
+            div#modal-div.show-transition {
+                visibility: visible;
+                opacity: 1;
+                transition: background-color 1s linear;
+            }
+            section#menu section, section#menu div {
+                position: absolute;
+                height: 100%;
+            }
+            section#menu-section header {
+                background-image: url(logo.jpe);
+                background-repeat: no-repeat;
+                background-position: center; 
+            }
+            section#menu-section ul {
+                padding-left: 20px;
+            }
+            section#menu-section li li {
+                width: 250px;
+                margin-top: 5px;
+            }
+            section#menu-section li li li {
+                width: 230px;
+                margin-top: 5px;
+            }
+            section#menu-section nav>ul>li:not(:first-child)>ul>li:nth-child(2n+1) {
+                background-image: url(glyphicons-602-chevron-down.png);
+                background-position: right;
+                background-repeat: no-repeat;
+            }
+            section#menu-section nav>ul>li:not(:first-child)>ul>li:nth-child(2n+1):hover {
+                font-size: 20px;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+            section#menu-section nav>ul>li:not(:first-child)>ul>li:nth-child(2n+1).opened {
+                background-image: url(glyphicons-601-chevron-up.png);
+            }
+            section#menu-section nav>ul>li:not(:first-child)>ul>li:nth-child(2n) {
+                display: none;
+            }
+            section#menu-section nav>ul>li:not(:first-child)>ul>li:nth-child(2n).show {
+                display: block;
+                transition: display 1s;
+            }
+            div#openclose-div {
+                width: 130px;
+                transition: margin-left 1s;
+                z-index: 10;
+            }
+            div#openclose-div.opened {
+                margin-left: 350px;
+                transition: margin-left 1s;
+            }
+            div#openclose-div input {
+                border: none;
+                width: 130px;
+                font-size: 30px;
+                text-align: right;
+                margin-top: 1px;
+                background-image: url(glyphicons-517-menu-hamburger.png);
+                background-position: left;
+                background-repeat: no-repeat;
+            }
+            div#openclose-div input.opened {
+                background-image: url(glyphicons-208-remove-2.png);
+            }             
+            div#modal-div {
+                background-color: rgba(0, 0, 0, 0.9);
+                transition: background-color 1s linear;
+                width: 100%;
+            }
+            section#menu-section {
+                background-color: #aaa;
+            }
+            section#menu-section header {
+                background-color: white;
+                height: 150px;
+                padding: 10px 17px;
+            }
+            section#menu-section header img {
+                position: inherit;
+            }
+            section#menu-section article {
+                z-index: 99;
+                height: calc(100% - 150px - 170px);
+            }
+            section#menu-section footer {
+                background-color: #777;
+                height: 150px;
+                width: inherit;
+                margin-top: 0;
+            }
+            section#menu footer {
+                padding-top: 5px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <section id="menu">
+            <section id="menu-section">
+                <header>
+                </header>
+                <article>
+                    <nav>
+                        <ul>
+                            <li>Cenários</li>
+                            <li><ul>
+                                <li id="menu-li1" class="clickable">Cenário Ex. 1</li>
+                                <li id="menu-lili1"><ul>
+                                    <li>Como tudo começou</li>
+                                    <li>O tropeiro</li>
+                                    <li>Traje do tropeiro</li>
+                                    <li>A tropa</li>
+                                </ul></li>
+                                <li id="menu-li2" class="clickable">Cenário Ex. 2</li>
+                                <li id="menu-lili2"><ul>
+                                    <li>A viagem</li>
+                                    <li>O pouso</li>
+                                    <li>As feiras de sorocaba</li>
+                                </ul></li>
+                            </ul></li>
+                        </ul>
+                    </nav>
+                </article>
+                <footer>
+                    <ul>
+                        <li>Sobre</li>
+                        <li><ul>
+                            <li>O projeto</li>
+                            <li>O munseu</li>
+                            <li>A equipe</li>
+                        </ul></li>
+                    </ul>
+                </footer>
+            </section>
+            <div id="openclose-div">
+                <input id="menu-btn" type="button" value="MENU" />
+            </div>
+            <div id="modal-div"></div>
+        </section>
+
+
+
+
+
+
+        <section id="dsf1">
+            <article>
+                <section>
+                    <header>
+                        <h1>Em qual século surgiram os tropeiros?</h1>
+                    </header>
+                    <article class="objtext">
+                        <div id="dsf1alternativa1"><span>Século XX</span></div>
+                        <div id="dsf1alternativa2"><span>Século XVII</span></div>
+                        <div id="dsf1alternativa3"><span>Século XV</span></div>
+                    </article>
+                    <footer>
+                        <nav class="nav-navigation">
+                            <div id="dsf1finalizar"><a href="fim-desafio.html"><span>Finalizar</span></a></div>
+                            <div id="dsf1cancelar"><a href="guiada2.html"><span>Cancelar</span></a></div>
+                            <div id="dsf1proximo"><span>#</span></div>
+                            <div id="dsf1estado"><span>1 de 4</span></div>
+                            <!--<div id="dsf1anterior"><span>#</span></div>-->
+                        </nav>
+                    </footer>
+                </section>
+            </article>
+        </section>
+
+
+
+
+
+        <section id="dsf2" class="hide">
+            <article>
+                <section>
+                    <header>
+                        <h1>De onde os tropeiros traziam os muares?</h1>
+                    </header>
+                    <article class="objtext">
+                        <div id="dsf2alternativa1"><span>Norte</span></div>
+                        <div id="dsf2alternativa2"><span>Sul</span></div>
+                        <div id="dsf2alternativa3"><span>Nordeste</span></div>
+                    </article>
+                    <footer>
+                        <nav class="nav-navigation">
+                            <div id="dsf2finalizar"><a href="fim-desafio.html"><span>Finalizar</span></a></div>
+                            <div id="dsf2cancelar"><a href="guiada2.html"><span>Cancelar</span></a></div>
+                            <div id="dsf2proximo"><span>#</span></div>
+                            <div id="dsf2estado"><span>2 de 4</span></div>
+                            <div id="dsf2anterior"><span>#</span></div>
+                        </nav>
+                    </footer>
+                </section>
+            </article>
+        </section>
+
+
+
+
+        <section id="dsf3" class="hide">
+            <article>
+                <section>
+                    <header>
+                        <h1>Nos dias atuais, podemos considerar como a guaiaca contemporânea:</h1>
+                    </header>
+                    <article class="objtext">
+                        <div id="dsf3alternativa1"></div>
+                        <div id="dsf3alternativa2"></div>
+                        <div id="dsf3alternativa3"></div>
+                    </article>
+                    <footer>
+                        <nav class="nav-navigation">
+                            <div id="dsf3finalizar"><a href="fim-desafio.html"><span>Finalizar</span></a></div>
+                            <div id="dsf3cancelar"><span><a href="guiada2.html">Cancelar</span></a></div>
+                            <div id="dsf3proximo"><span>#</span></div>
+                            <div id="dsf3estado"><span>3 de 4</span></div>
+                            <div id="dsf3anterior"><span>#</span></div>
+                        </nav>
+                    </footer>
+                </section>
+            </article>
+        </section>
+
+
+
+
+        <section id="dsf4" class="hide">
+            <article>
+                <section>
+                    <header>
+                        <h1>Qual das imagens a seguir melhor apresenta a tropa dos tropeiros?</h1>
+                    </header>
+                    <article class="objtext">
+                        <div id="dsf4alternativa1"></div>
+                        <div id="dsf4alternativa2"></div>
+                        <div id="dsf4alternativa3"></div>
+                    </article>
+                    <footer>
+                        <nav class="nav-navigation">
+                            <div id="dsf4finalizar"><a href="fim-desafio.html"><span>Finalizar</span></a></div>
+                            <div id="dsf4cancelar"><a href="guiada2.html"><span>Cancelar</span></a></div>
+                            <!--<div id=4dsf1proximo"><span>#</span></div>-->
+                            <div id="dsf4estado"><span>4 de 4</span></div>
+                            <div id="dsf4anterior"><span>#</span></div>
+                        </nav>
+                    </footer>
+                </section>
+            </article>
+        </section>
+
+        <script>
+        (function () {
+            function addClass(object, className) {
+                object.className = object.className + " " + className;
+            }
+            function removeClass(object, className) {
+                object.className = object.className.replace(className, "");
+            }
+            function containClass(object, className) {
+                return object.className.search(className) !== -1;
+            }
+            function gofromto(from, to) {
+                addClass(document.getElementById(from), "hide");
+                removeClass(document.getElementById(to), "hide");
+            }
+            function controlMenu(event) {
+                var target = event.target || event.srcElement;
+                var type = event.type;
+                console.log(target);
+                console.log(type);
+
+                var openCloseDiv = document.getElementById('openclose-div');
+                var modalDiv = document.getElementById('modal-div');
+                var menuBtn = document.getElementById('menu-btn');
+                var menuSection = document.getElementById('menu-section');
+
+                if (!containClass(menuBtn, "opened") && ((type === 'click' && target.id === 'menu-btn')/* || verificar se foi um touchmove */)) {
+                    addClass(openCloseDiv, "opened");
+                    addClass(menuBtn, "opened");
+                    addClass(modalDiv, "show-transition");
+                    addClass(menuSection, "show-transition");
+                    addClass(menuSection.children[0], "show-transition");
+                    addClass(menuSection.children[1], "show-transition");
+                    addClass(menuSection.children[2], "show-transition");
+                } else {
+                    removeClass(openCloseDiv, "opened");
+                    removeClass(menuBtn, "opened");
+                    removeClass(modalDiv, "show-transition");
+                    removeClass(menuSection, "show-transition");
+                    removeClass(menuSection.children[0], "show-transition");
+                    removeClass(menuSection.children[1], "show-transition");
+                    removeClass(menuSection.children[2], "show-transition");
+                }
+            }
+            function controlCenarios(event) {
+                var target = event.target || event.srcElement;
+                var li1 = document.getElementById('menu-li1');
+                var lili1 = document.getElementById('menu-lili1');
+                var li2 = document.getElementById('menu-li2');
+                var lili2 = document.getElementById('menu-lili2');
+
+                if (target.id === 'menu-li1') {
+                    if (containClass(li2, "opened")) {
+                        removeClass(li2, "opened");
+                        removeClass(lili2, "show");
+                    }
+                    if (containClass(li1, "opened")) {
+                        removeClass(li1, "opened");
+                        removeClass(lili1, "show");
+                    } else {
+                        addClass(li1, "opened");
+                        addClass(lili1, "show");
+                    }
+                } else if (target.id === 'menu-li2') {
+                    if (containClass(li1, "opened")) {
+                        removeClass(li1, "opened");
+                        removeClass(lili1, "show");
+                    }
+                    if (containClass(li2, "opened")) {
+                        removeClass(li2, "opened");
+                        removeClass(lili2, "show");
+                    } else {
+                        addClass(li2, "opened");
+                        addClass(lili2, "show");
+                    }
+                }
+            }
+
+            document.getElementById('dsf1proximo').addEventListener("click", function (event) {
+                gofromto('dsf1', 'dsf2');
+            });
+            document.getElementById('dsf2proximo').addEventListener("click", function (event) {
+                gofromto('dsf2', 'dsf3');
+            });
+            document.getElementById('dsf3proximo').addEventListener("click", function (event) {
+                gofromto('dsf3', 'dsf4');
+            });
+
+            document.getElementById('dsf2anterior').addEventListener("click", function (event) {
+                gofromto('dsf2', 'dsf1');
+            });
+            document.getElementById('dsf3anterior').addEventListener("click", function (event) {
+                gofromto('dsf3', 'dsf2');
+            });
+            document.getElementById('dsf4anterior').addEventListener("click", function (event) {
+                gofromto('dsf4', 'dsf3');
+            });
+
+            document.getElementById('dsf1cancelar').addEventListener("click", function (event) {
+                document.getElementById('dsf1cancelar').children[0].click();
+            });
+            document.getElementById('dsf2cancelar').addEventListener("click", function (event) {
+                document.getElementById('dsf2cancelar').children[0].click();
+            });
+            document.getElementById('dsf3cancelar').addEventListener("click", function (event) {
+                document.getElementById('dsf3cancelar').children[0].click();
+            });
+            document.getElementById('dsf4cancelar').addEventListener("click", function (event) {
+                document.getElementById('dsf4cancelar').children[0].click();
+            });
+
+            document.getElementById('openclose-div').addEventListener("click", controlMenu);
+
+            document.getElementById('modal-div').addEventListener("click", controlMenu);
+
+            document.getElementById('menu-li1').addEventListener("click", controlCenarios);
+
+            document.getElementById('menu-li2').addEventListener("click", controlCenarios);
+
+            document.addEventListener("keypress", function (event) {
+                if (!containClass(document.getElementById('menu-btn'), "opened"))
+                switch (event.keyCode) {
+                    case 37: // left
+                        if (!containClass(document.getElementById('dsf2'), "hide"))
+                            document.getElementById('dsf2anterior').click();
+                        else if (!containClass(document.getElementById('dsf3'), "hide"))
+                            document.getElementById('dsf3anterior').click();
+                        else if (!containClass(document.getElementById('dsf4'), "hide"))
+                            document.getElementById('dsf4anterior').click();
+                        break;
+                    case 39: // right
+                        if (!containClass(document.getElementById('dsf2'), "hide"))
+                            document.getElementById('dsf2proximo').click();
+                        else if (!containClass(document.getElementById('dsf3'), "hide"))
+                            document.getElementById('dsf3proximo').click();
+                        else if (!containClass(document.getElementById('dsf1'), "hide"))
+                            document.getElementById('dsf1proximo').click();
+                        else
+                            document.getElementById('goto').click();
+                        break;
+                }
+            });
+
+            document.getElementById('dsf1alternativa1').addEventListener("click", function (event) {
+                var target = event.target || event.srcElement;
+                var parent = target.parentNode;
+
+                if (containClass(parent, "selected"))
+                    removeClass(parent, "selected");
+                else
+                    addClass(parent, "selected");
+
+                parent = document.getElementById('dsf1alternativa2');
+                if (containClass(parent, "selected"))
+                    removeClass(parent, "selected");
+
+                parent = document.getElementById('dsf1alternativa3');
+                if (containClass(parent, "selected"))
+                    removeClass(parent, "selected");
+            });
+
+            document.getElementById('dsf1alternativa2').addEventListener("click", function (event) {
+                var target = event.target || event.srcElement;
+                var parent = target.parentNode;
+
+                if (containClass(parent, "selected"))
+                    removeClass(parent, "selected");
+                else
+                    addClass(parent, "selected");
+
+                parent = document.getElementById('dsf1alternativa1');
+                if (containClass(parent, "selected"))
+                    removeClass(parent, "selected");
+
+                parent = document.getElementById('dsf1alternativa3');
+                if (containClass(parent, "selected"))
+                    removeClass(parent, "selected");
+            });
+
+            document.getElementById('dsf1alternativa3').addEventListener("click", function (event) {
+                var target = event.target || event.srcElement;
+                var parent = target.parentNode;
+
+                if (containClass(parent, "selected"))
+                    removeClass(parent, "selected");
+                else
+                    addClass(parent, "selected");
+
+                parent = document.getElementById('dsf1alternativa2');
+                if (containClass(parent, "selected"))
+                    removeClass(parent, "selected");
+
+                parent = document.getElementById('dsf1alternativa1');
+                if (containClass(parent, "selected"))
+                    removeClass(parent, "selected");
+            });
+
+            document.getElementById('dsf2alternativa1').addEventListener("click", function (event) {
+                var target = event.target || event.srcElement;
+                var parent = target.parentNode;
+
+                if (containClass(parent, "selected"))
+                    removeClass(parent, "selected");
+                else
+                    addClass(parent, "selected");
+
+                parent = document.getElementById('dsf2alternativa2');
+                if (containClass(parent, "selected"))
+                    removeClass(parent, "selected");
+
+                parent = document.getElementById('dsf2alternativa3');
+                if (containClass(parent, "selected"))
+                    removeClass(parent, "selected");
+            });
+
+            document.getElementById('dsf2alternativa2').addEventListener("click", function (event) {
+                var target = event.target || event.srcElement;
+                var parent = target.parentNode;
+
+                if (containClass(parent, "selected"))
+                    removeClass(parent, "selected");
+                else
+                    addClass(parent, "selected");
+
+                parent = document.getElementById('dsf2alternativa1');
+                if (containClass(parent, "selected"))
+                    removeClass(parent, "selected");
+
+                parent = document.getElementById('dsf2alternativa3');
+                if (containClass(parent, "selected"))
+                    removeClass(parent, "selected");
+            });
+
+            document.getElementById('dsf2alternativa3').addEventListener("click", function (event) {
+                var target = event.target || event.srcElement;
+                var parent = target.parentNode;
+
+                if (containClass(parent, "selected"))
+                    removeClass(parent, "selected");
+                else
+                    addClass(parent, "selected");
+
+                parent = document.getElementById('dsf2alternativa2');
+                if (containClass(parent, "selected"))
+                    removeClass(parent, "selected");
+
+                parent = document.getElementById('dsf2alternativa1');
+                if (containClass(parent, "selected"))
+                    removeClass(parent, "selected");
+            });
+
+            document.getElementById('dsf3alternativa1').addEventListener("click", function (event) {
+                var target = event.target || event.srcElement;
+
+                if (containClass(target, "selected"))
+                    removeClass(target, "selected");
+                else
+                    addClass(target, "selected");
+
+                target = document.getElementById('dsf3alternativa2');
+                if (containClass(target, "selected"))
+                    removeClass(target, "selected");
+
+                target = document.getElementById('dsf3alternativa3');
+                if (containClass(target, "selected"))
+                    removeClass(target, "selected");
+            });
+
+            document.getElementById('dsf3alternativa2').addEventListener("click", function (event) {
+                var target = event.target || event.srcElement;
+
+                if (containClass(target, "selected"))
+                    removeClass(target, "selected");
+                else
+                    addClass(target, "selected");
+
+                target = document.getElementById('dsf3alternativa1');
+                if (containClass(target, "selected"))
+                    removeClass(target, "selected");
+
+                target = document.getElementById('dsf3alternativa3');
+                if (containClass(target, "selected"))
+                    removeClass(target, "selected");
+            });
+
+            document.getElementById('dsf3alternativa3').addEventListener("click", function (event) {
+                var target = event.target || event.srcElement;
+
+                if (containClass(target, "selected"))
+                    removeClass(target, "selected");
+                else
+                    addClass(target, "selected");
+
+                target = document.getElementById('dsf3alternativa2');
+                if (containClass(target, "selected"))
+                    removeClass(target, "selected");
+
+                target = document.getElementById('dsf3alternativa1');
+                if (containClass(target, "selected"))
+                    removeClass(target, "selected");
+            });
+            
+            document.getElementById('dsf4alternativa1').addEventListener("click", function (event) {
+                var target = event.target || event.srcElement;
+
+                if (containClass(target, "selected"))
+                    removeClass(target, "selected");
+                else
+                    addClass(target, "selected");
+
+                target = document.getElementById('dsf4alternativa2');
+                if (containClass(target, "selected"))
+                    removeClass(target, "selected");
+
+                target = document.getElementById('dsf4alternativa3');
+                if (containClass(target, "selected"))
+                    removeClass(target, "selected");
+            });
+
+            document.getElementById('dsf4alternativa2').addEventListener("click", function (event) {
+                var target = event.target || event.srcElement;
+
+                if (containClass(target, "selected"))
+                    removeClass(target, "selected");
+                else
+                    addClass(target, "selected");
+
+                target = document.getElementById('dsf4alternativa1');
+                if (containClass(target, "selected"))
+                    removeClass(target, "selected");
+
+                target = document.getElementById('dsf4alternativa3');
+                if (containClass(target, "selected"))
+                    removeClass(target, "selected");
+            });
+
+            document.getElementById('dsf4alternativa3').addEventListener("click", function (event) {
+                var target = event.target || event.srcElement;
+
+                if (containClass(target, "selected"))
+                    removeClass(target, "selected");
+                else
+                    addClass(target, "selected");
+
+                target = document.getElementById('dsf4alternativa2');
+                if (containClass(target, "selected"))
+                    removeClass(target, "selected");
+
+                target = document.getElementById('dsf4alternativa1');
+                if (containClass(target, "selected"))
+                    removeClass(target, "selected");
+            });
+            
+        })();
+        </script>
+    </body>
+</html>

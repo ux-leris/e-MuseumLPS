@@ -1,0 +1,215 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 17/11/2015, 21:20:19
+    Author     : monique
+*/
+
+@media only screen and (max-device-width:1024px){
+    
+    .mainClass > .col-sm-7{
+        width:50%;
+    }
+    
+    .mainClass > .col-sm-5{
+        width:50%;
+    }
+    
+    .perguntasAnteriores > .col-sm-7 {
+        width:67% !important;
+        float: right !important;
+    }
+    
+    .sobreNos > .col-sm-3{
+        width:35%;
+    }
+    
+    .imgNos{
+        margin-left: 50px !important;
+    }
+   
+}
+
+@media only screen and (max-device-width:480px){
+    
+    .row > .col-md-4{
+        width:100% !important;
+    }
+    
+    .col-sm-3{
+        width:100% !important;
+    }
+    
+    h2{
+        text-align:center;
+    }
+    
+    .navbar-collapse{
+        margin-left:0px !important;
+        
+    }
+    
+    .navbar-collapse > ul > li{
+        margin-left:10px !important;
+        
+    }
+    
+    html{
+        margin:0px !important;
+        padding:0px !important;
+    }
+    
+    #text { 
+        display:none !important;
+    }
+    
+    #textMobile { 
+        display:block !important;
+    }
+    
+    .modal-body{
+        height:400px !important;
+    }
+    
+    .modal-body > .col-sm-1{
+        width: 10% !important;
+        float:left;
+        padding:0px;
+    }
+    
+    .modal-body > .left{
+        
+        float:right;
+    }
+    
+    .pageAbout {
+        margin-left:20px !important;
+    }
+    
+    .img-circle{
+        margin-bottom:20px;
+    }
+    
+    .imagem{
+        width:100% !important;
+        text-align:center;
+        margin:auto;
+    }
+    .nomes{
+        float:right;
+    }
+    
+    .fotos{
+        float:left;
+    }
+    
+    .nomes > div { 
+        margin-top:40px;
+        margin-bottom:100px;
+    }
+    
+    .museu {
+        float:left !important;
+    }
+    
+    .forms{
+        float:left !important;
+        
+    }
+    
+    .forms > .col-sm-2{
+        text-align:left !important;
+        margin-left:20px;
+        
+    }
+    
+    .perguntas > .col-sm-5{
+        float:left !important;
+        margin-left:20px !important;
+    }
+    
+    .perguntasAnteriores > .col-sm-7 {
+        width:100% !important;
+    }
+    
+    .perguntasAnteriores > .col-sm-5 {
+        width:0% !important;
+    }
+    
+    .mainClass > .col-sm-5{
+        width: 100% !important;
+    }
+    .mainClass > .col-sm-7{
+        width: 100% !important;
+    }
+    
+    .mainPage > .col-sm-3{
+        display:none;
+        width:0% !important;
+        margin:0px !important;
+    }
+    .mainPage > .col-sm-9{
+        width:100% !important;
+        float:right;
+    }
+    
+    .menuHidden{
+        display: inline !important;
+    }
+    
+    .left-arrow{ 
+        padding-top: 50% !important;
+        margin:10px;
+        margin-left:-25px;
+    }
+    
+    .galeryBody
+    {
+        width:90% !important;
+    }
+    
+    .right-modal{
+        width:40% !important;
+        text-align:justify !important;
+    }
+    
+    .comentario{
+        width:62% !important;
+    }
+    
+    .botaoComentario{
+        width:38% !important;
+        padding-left:0px;
+        
+        padding-right:0px;
+    }
+    
+    .right-arrow{
+        position:relative;
+        left:-25px !important;
+    }
+    
+    .image-desafio{
+        display:none;
+    }
+    
+    .imgHidden{
+        display:inline !important;
+    }
+    
+    .desafios > .col-sm-1{
+        padding-top:5% !important;
+        width:10%;
+    }
+    
+    .desafios > .col-sm-5{
+        width:100%;
+    }
+    
+    .desafios > .right-arrow{
+        float:left !important;
+    }
+}

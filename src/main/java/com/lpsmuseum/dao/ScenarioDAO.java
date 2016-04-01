@@ -58,9 +58,11 @@ public class ScenarioDAO extends BasicDAO {
 
 		//new ThemeDAO().merge(scenario.getTheme());
 		ThemeDO tdo;
-		if ((tdo = (ThemeDO) new ThemeDAO().findEntity(scenario.getTheme())) != null) {
-			scenario.setTheme(tdo);
+                ThemeDAO tdao = new ThemeDAO();
+		if ((tdo = (ThemeDO) tdao.findEntity(scenario.getTheme())) == null) {
+			tdao.createTheme(scenario.getTheme());
 		}
+                //scenario.setTheme(tdo);
 
 		create(scenario);
 	}

@@ -1,0 +1,649 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>MUVI Nav. Guiada</title>
+        <style>
+            html, body {
+                border: 0px;
+                margin: 0px;
+                padding: 0px;
+                height: 100%;
+                width: 100%;
+                overflow: hidden;
+                background-image: url(Monumento_ao_Tropeiro_Lapa_PR.JPG);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                position: relative;
+
+
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+
+                cursor: default;
+            }
+            body > section {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+            ul {
+                list-style: none;
+            }
+            nav.nav-navigation {
+                position: absolute;
+                top: 10px;
+                left: calc(50% - ((52px + 102px + 52px) / 2));
+            }
+            nav.nav-navigation ul {
+                margin: 0;
+                padding: 0;
+                text-align: center;
+            }
+            nav.nav-navigation ul li {
+                display: inline-block;
+            }
+            nav.nav-navigation li div {
+                border: solid #ccc 1px;
+                width: 50px;
+                height: 30px;
+                padding-top: 10px;
+            }
+            a.nav-sce-btn {
+                visibility: hidden;
+            }
+            nav.nav-navigation li div:not(.nav-sce-location):hover {
+                background-color: #ddd;
+                cursor: pointer;
+            }
+            nav.nav-navigation li div.nav-sce-location {
+                width: 100px;
+            }
+            #backto:hover {
+                background-color: rgba(0, 0, 0, 0);
+                cursor: default;
+            }
+            #backto1, #backto2, #backto3 {
+                background-image: url(glyphicons-171-step-backward.png);
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            #goto2, #goto3, #goto4 {
+                background-image: url(glyphicons-179-step-forward.png);
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            #goto {
+                background-image: url(glyphicons-178-fast-forward.png);
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            img {
+                position: absolute;
+                top: -20px;
+                left: 49%;
+            }
+            section#obj1 > article,
+            section#obj2 > article,
+            section#obj3 > article,
+            section#obj4 > article {
+                position: relative;
+                width: 80%;
+                margin-top: -3%;
+                margin-left: 10%;
+                height: 100%;
+            }
+            section > article > section {
+                position: relative;
+                margin-top: 14%;
+                margin-left: 5%;
+                padding-top: 0.3%;
+                padding-left: 3%;
+                width: 38%;
+                height: 100%;
+                background-color: rgba(127, 127, 127, 0.3);
+                border-radius: 10px;
+            }
+            section header {
+                height: 10%;
+                width: 90%;
+            }
+            section header h1 {
+                font-size: 24px;
+                margin: 15px 0px 5px 0px;
+            }
+            section article.objtext {
+                position: absolute;
+                background-color: rgba(127, 127, 127, 0.5);
+                top: 9%;
+                width: 87%;
+                height: 58%;
+            }
+            section article div {
+                overflow-y: scroll;
+                height: 58%;
+                max-height: 58%;
+                padding: 10px;
+                border-radius: 7px;
+            }
+            section article a {
+                position: absolute;
+                margin-left: 58%;
+                font-size: 14px;
+            }
+            section footer {
+                position: absolute;
+                margin-top: 50%;
+                width: 87%;
+                height: 17%;
+                background-color: rgba(0, 0, 0, 0.3);
+                border-radius: 3px;
+            }
+            section footer div {
+                height: 100%;
+                width: 94.5%;
+                border-radius: 3px;
+            }
+            .hide {
+                display: none;
+            }
+            .hide-li div {
+                border-width: 0;
+                color: #eee;
+            }
+            .hide-li div:not(.nav-sce-location):hover {
+                background-color: #eee;
+                cursor: default;
+            }
+            div.nav-sce-location {
+                cursor: default;
+            }
+        </style>
+
+        <style type="text/css">
+            section#menu section {
+                border: solid black 1px;
+                width: 0;
+                z-index: 10;
+            }
+            section#menu-section.show-transition {
+                width: 350px;
+                transition: width 1s;
+            }
+            section#menu-section>header,
+            section#menu-section>article,
+            section#menu-section>footer,
+            div#modal-div {
+                visibility: hidden;
+                opacity: 0;
+                transition: visibility 0s, opacity 1s linear;
+                z-index: 9;
+            }
+            section#menu-section>header.show-transition,
+            section#menu-section>article.show-transition,
+            section#menu-section>footer.show-transition,
+            div#modal-div.show-transition {
+                visibility: visible;
+                opacity: 1;
+                transition: background-color 1s linear;
+            }
+            section#menu section, section#menu div {
+                position: absolute;
+                height: 100%;
+            }
+            section#menu-section header {
+                background-image: url(logo.jpe);
+                background-repeat: no-repeat;
+                background-position: center; 
+            }
+            section#menu-section ul {
+                padding-left: 20px;
+            }
+            section#menu-section li li {
+                width: 250px;
+                margin-top: 5px;
+            }
+            section#menu-section li li li {
+                width: 230px;
+                margin-top: 5px;
+            }
+            section#menu-section nav>ul>li:not(:first-child)>ul>li:nth-child(2n+1) {
+                background-image: url(glyphicons-602-chevron-down.png);
+                background-position: right;
+                background-repeat: no-repeat;
+            }
+            section#menu-section nav>ul>li:not(:first-child)>ul>li:nth-child(2n+1):hover {
+                font-size: 20px;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+            section#menu-section nav>ul>li:not(:first-child)>ul>li:nth-child(2n+1).opened {
+                background-image: url(glyphicons-601-chevron-up.png);
+            }
+            section#menu-section nav>ul>li:not(:first-child)>ul>li:nth-child(2n) {
+                display: none;
+            }
+            section#menu-section nav>ul>li:not(:first-child)>ul>li:nth-child(2n).show {
+                display: block;
+                transition: display 1s;
+            }
+            div#openclose-div {
+                width: 130px;
+                transition: margin-left 1s;
+                z-index: 10;
+            }
+            div#openclose-div.opened {
+                margin-left: 350px;
+                transition: margin-left 1s;
+            }
+            div#openclose-div input {
+                border: none;
+                width: 130px;
+                font-size: 30px;
+                text-align: right;
+                margin-top: 1px;
+                background-image: url(glyphicons-517-menu-hamburger.png);
+                background-position: left;
+                background-repeat: no-repeat;
+            }
+            div#openclose-div input.opened {
+                background-image: url(glyphicons-208-remove-2.png);
+            }             
+            div#modal-div {
+                background-color: rgba(0, 0, 0, 0.9);
+                transition: background-color 1s linear;
+                width: 100%;
+            }
+            section#menu-section {
+                background-color: #aaa;
+            }
+            section#menu-section header {
+                background-color: white;
+                height: 150px;
+                padding: 10px 17px;
+            }
+            section#menu-section header img {
+                position: inherit;
+            }
+            section#menu-section article {
+                z-index: 99;
+                height: calc(100% - 150px - 170px);
+            }
+            section#menu-section footer {
+                background-color: #777;
+                height: 150px;
+                width: inherit;
+                margin-top: 0;
+            }
+            section#menu footer {
+                padding-top: 5px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <section id="menu">
+            <section id="menu-section">
+                <header>
+                </header>
+                <article>
+                    <nav>
+                        <ul>
+                            <li>Cenários</li>
+                            <li><ul>
+                                <li id="menu-li1" class="clickable">Cenário Ex. 1</li>
+                                <li id="menu-lili1"><ul>
+                                    <li>Como tudo começou</li>
+                                    <li>O tropeiro</li>
+                                    <li>Traje do tropeiro</li>
+                                    <li>A tropa</li>
+                                </ul></li>
+                                <li id="menu-li2" class="clickable">Cenário Ex. 2</li>
+                                <li id="menu-lili2"><ul>
+                                    <li>A viagem</li>
+                                    <li>O pouso</li>
+                                    <li>As feiras de sorocaba</li>
+                                </ul></li>
+                            </ul></li>
+                        </ul>
+                    </nav>
+                </article>
+                <footer>
+                    <ul>
+                        <li>Sobre</li>
+                        <li><ul>
+                            <li>O projeto</li>
+                            <li>O munseu</li>
+                            <li>A equipe</li>
+                        </ul></li>
+                    </ul>
+                </footer>
+            </section>
+            <div id="openclose-div">
+                <input id="menu-btn" type="button" value="MENU" />
+            </div>
+            <div id="modal-div"></div>
+        </section>
+
+
+
+
+
+
+        <section id="obj1">
+            <nav class="nav-navigation">
+                <ul>
+                    <li class="hide-li"><div id="backto"><a class="nav-sce-btn">#</a></div></li>
+                    <li><div class="nav-sce-location">1 de 4</div></li>
+                    <li><div id="goto2"><a class="nav-sce-btn">#</a></div></li>
+                </ul>
+            </nav>
+            <article>
+                <section>
+                    <header>
+                        <h1>Como tudo Começou</h1>
+                    </header>
+                    <article class="objtext">
+                        <div>
+                            Antigamente não existiam carros, ônibus ou caminhões. As viagens eram feitas a pé e as cargas e pessoal eram transportadas nas costas dos escravos índios e negros.<br>
+                            As poucas cidades viviam isoladas, com dificuldades para adquirir alimentos e outros produtos
+                            de fora e também dificuldades para transportar o que produziam.<br>
+                            Foi nessa época no final do século XVII, que surgiram os tropeiros.
+                        </div>
+                        <a class="amore" href="#">Para saber mais...</a>
+                    </article>
+                    <footer class="hide">
+                        <div>Tropeiro, condutor de tropa, arrieiro ou bruaqueiro é a designação dada aos condutores de tropas ou comitivas de muares e cavalos entre as regiões de produção e os centros consumidores no Brasil a partir do século XVII. Mais ao sul do Brasil, também são conhecidos como carreteiros devido às carretas com as quais trabalhavam.</div>
+                    </footer>
+                </section>
+                <img src="sala troperismo.jpg"></img>
+            </article>
+        </section>
+
+
+
+
+
+
+
+
+
+        <section id="obj2" class="hide">
+            <nav class="nav-navigation">
+                <ul>
+                    <li><div id="backto1"><a class="nav-sce-btn">#</a></div></li>
+                    <li><div class="nav-sce-location">2 de 4</div></li>
+                    <li><div id="goto3"><a class="nav-sce-btn">#</a></div></li>
+                </ul>
+            </nav>
+            <article>
+                <section>
+                    <header>
+                        <h1>O tropeiro</h1>
+                    </header>
+                    <article class="objtext">
+                        <div>
+                            O tropeiro trabalhava na condução e comércio de muares. Os muares são as mulas e burros, resultado do cruzamento da égua com o jumento, a mula é a fêmea e o burro o macho.Ambos são estéreis (não podem se reproduzir).<br>
+                            Os muares são animais muito resistentes. Carregam maior carga do que o cavalo e aguentam viajar por mais tempo e em estradas difíceis. Por esse motivo os muares ficaram muito conhecidos.<br>
+                            O tropeiro trazia os muares do Sul e para aproveitar a viajem também transportavam cargas e pessoas que gostavam de viajar junto com as tropas.
+                        </div>
+                        <a class="amore" href="#">Para saber mais...</a>
+                    </article>
+                    <footer class="hide">
+                        <div>Tropeiro, condutor de tropa, arrieiro ou bruaqueiro[1] é a designação dada aos condutores de tropas ou comitivas de muares e cavalos entre as regiões de produção e os centros consumidores no Brasil a partir do século XVII. Mais ao sul do Brasil, também são conhecidos como carreteiros devido às carretas com as quais trabalhavam.</div>
+                    </footer>
+                </section>
+                <img src="a tropa.jpg"></img>
+            </article>
+        </section>
+
+
+
+
+
+
+
+
+        <section id="obj3" class="hide">
+            <nav class="nav-navigation">
+                <ul>
+                    <li><div id="backto2"><a class="nav-sce-btn">#</a></div></li>
+                    <li><div class="nav-sce-location">3 de 4</div></li>
+                    <li><div id="goto4"><a class="nav-sce-btn">#</a></div></li>
+                </ul>
+            </nav>
+            <article>
+                <section>
+                    <header>
+                        <h1>Traje do Tropeiro</h1>
+                    </header>
+                    <article class="objtext">
+                        <div>
+                            O tropeiro em suas viagens usava roupas comuns: calça, camisa, lenço, um chapéu de aba larga para se proteger do sol e da chuva, um cinto de couro com vários bolsos chamados de guaiacas, para guardar dinheiro e botas. Nos dias de chuva e frio usava uma capa ou um poncho que chegava a cobrir até a montaria. E também seu facão, esporas e relho que não podiam faltar.
+                        </div>
+                        <a class="amore" href="#">Para saber mais...</a>
+                    </article>
+                    <footer class="hide">
+                        <div>"Arrieiro" vem de "arre", interjeição usada para incitar os animais a andarem. "Bruaqueiro" vem de "bruaca", saco de couro usado para transportar cargas no lombo de animais.</div>
+                    </footer>
+                </section>
+                <img src="traje.jpg"></img>
+            </article>
+        </section>
+
+
+
+
+
+
+
+        <section id="obj4" class="hide">
+            <nav class="nav-navigation">
+                <ul>
+                    <li><div id="backto3"><a class="nav-sce-btn">#</a></div></li>
+                    <li><div class="nav-sce-location">4 de 4</div></li>
+                    <li class="hide-li"><div id="goto"><a class="nav-sce-btn" href="fim-cenario.html">#</a></div></li>
+                </ul>
+            </nav>
+            <article>
+                <section>
+                    <header>
+                        <h1>A Tropa</h1>
+                    </header>
+                    <article class="objtext">
+                        <div>
+                            A tropa era formada pela tropa xucra ou solta, que eram os animais trazidos do Sul para serem vendidos nas feiras de Sorocaba. A tropa arreada ou cargueira eram os animais que levavam as mercadorias a serem comercializadas e os suprimentos para a tropa.<br>
+                            Além do tropeiro (chefe da tropa), o capataz, os tocadores ou tangedores, e ajudavam a guiar a tropa, os camaradas ou peões e o cozinheiro ajudavam a compor a tropa.
+                        </div>
+                        <a class="amore" href="#">Para saber mais...</a>
+                    </article>
+                    <footer class="hide">
+                        <div>Cada comitiva era dividida em lotes de sete animais, cada um aos cuidados de um homem que os controlava através de gritos e assobios. Cada animal carregava cerca de 120 quilogramas e chegava a percorrer até 3 000 quilômetros</div>
+                    </footer>
+                </section>
+                <img src="tropa2.jpg" />
+            </article>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+        <script>
+        (function () {
+            function addClass(object, className) {
+                object.className = object.className + " " + className;
+            }
+            function removeClass(object, className) {
+                object.className = object.className.replace(className, "");
+            }
+            function containClass(object, className) {
+                return object.className.search(className) !== -1;
+            }
+            function gofromto(from, to) {
+                addClass(document.getElementById(from), "hide");
+                removeClass(document.getElementById(to), "hide");
+            }
+            function controlMenu(event) {
+                var target = event.target || event.srcElement;
+                var type = event.type;
+                console.log(target);
+                console.log(type);
+
+                var openCloseDiv = document.getElementById('openclose-div');
+                var modalDiv = document.getElementById('modal-div');
+                var menuBtn = document.getElementById('menu-btn');
+                var menuSection = document.getElementById('menu-section');
+
+                if (!containClass(menuBtn, "opened") && ((type === 'click' && target.id === 'menu-btn')/* || verificar se foi um touchmove */)) {
+                    addClass(openCloseDiv, "opened");
+                    addClass(menuBtn, "opened");
+                    addClass(modalDiv, "show-transition");
+                    addClass(menuSection, "show-transition");
+                    addClass(menuSection.children[0], "show-transition");
+                    addClass(menuSection.children[1], "show-transition");
+                    addClass(menuSection.children[2], "show-transition");
+                } else {
+                    removeClass(openCloseDiv, "opened");
+                    removeClass(menuBtn, "opened");
+                    removeClass(modalDiv, "show-transition");
+                    removeClass(menuSection, "show-transition");
+                    removeClass(menuSection.children[0], "show-transition");
+                    removeClass(menuSection.children[1], "show-transition");
+                    removeClass(menuSection.children[2], "show-transition");
+                }
+            }
+            function controlCenarios(event) {
+                var target = event.target || event.srcElement;
+                var li1 = document.getElementById('menu-li1');
+                var lili1 = document.getElementById('menu-lili1');
+                var li2 = document.getElementById('menu-li2');
+                var lili2 = document.getElementById('menu-lili2');
+
+                if (target.id === 'menu-li1') {
+                    if (containClass(li2, "opened")) {
+                        removeClass(li2, "opened");
+                        removeClass(lili2, "show");
+                    }
+                    if (containClass(li1, "opened")) {
+                        removeClass(li1, "opened");
+                        removeClass(lili1, "show");
+                    } else {
+                        addClass(li1, "opened");
+                        addClass(lili1, "show");
+                    }
+                } else if (target.id === 'menu-li2') {
+                    if (containClass(li1, "opened")) {
+                        removeClass(li1, "opened");
+                        removeClass(lili1, "show");
+                    }
+                    if (containClass(li2, "opened")) {
+                        removeClass(li2, "opened");
+                        removeClass(lili2, "show");
+                    } else {
+                        addClass(li2, "opened");
+                        addClass(lili2, "show");
+                    }
+                }
+            }
+            function shouldHideFooter(getingOutFrom) {
+                    var a = amores[getingOutFrom-1];
+                    var aparentparent = a.parentNode.parentNode;
+                    var footer = aparentparent.children[2];
+                    if (!containClass(footer, "hide"))
+                        addClass(footer, "hide")
+            }
+
+            document.addEventListener("keypress", function (event) {
+                if (!containClass(document.getElementById('menu-btn'), "opened"))
+                switch (event.keyCode) {
+                    case 37: // left
+                        if (!containClass(document.getElementById('obj2'), "hide"))
+                            document.getElementById('backto1').click();
+                        else if (!containClass(document.getElementById('obj3'), "hide"))
+                            document.getElementById('backto2').click();
+                        else if (!containClass(document.getElementById('obj4'), "hide"))
+                            document.getElementById('backto3').click();
+                        break;
+                    case 39: // right
+                        if (!containClass(document.getElementById('obj2'), "hide"))
+                            document.getElementById('goto3').click();
+                        else if (!containClass(document.getElementById('obj3'), "hide"))
+                            document.getElementById('goto4').click();
+                        else if (!containClass(document.getElementById('obj1'), "hide"))
+                            document.getElementById('goto2').click();
+                        else
+                            document.getElementById('goto').click();
+                        break;
+                }
+            });
+
+            document.getElementById('goto2').addEventListener("click", function (event) {
+                gofromto('obj1', 'obj2');
+                shouldHideFooter(1);
+            });
+
+            document.getElementById('goto3').addEventListener("click", function (event) {
+                gofromto('obj2', 'obj3');
+                shouldHideFooter(2);
+            });
+
+            document.getElementById('goto4').addEventListener("click", function (event) {
+                gofromto('obj3', 'obj4');
+                shouldHideFooter(3);
+            });
+
+            document.getElementById('goto').addEventListener("click", function (event) {
+                document.getElementById('goto').children[0].click();
+            });
+
+            document.getElementById('backto1').addEventListener("click", function (event) {
+                gofromto('obj2', 'obj1');
+                shouldHideFooter(2);
+            });
+
+            document.getElementById('backto2').addEventListener("click", function (event) {
+                gofromto('obj3', 'obj2');
+                shouldHideFooter(3);
+            });
+
+            document.getElementById('backto3').addEventListener("click", function (event) {
+                gofromto('obj4', 'obj3');
+                shouldHideFooter(4);
+            });
+
+            document.getElementById('openclose-div').addEventListener("click", controlMenu);
+
+            document.getElementById('modal-div').addEventListener("click", controlMenu);
+
+            document.getElementById('menu-li1').addEventListener("click", controlCenarios);
+
+            document.getElementById('menu-li2').addEventListener("click", controlCenarios);
+
+            var amores = document.getElementsByClassName('amore');
+            for (var amore in amores) {
+                if (amores[amore].tagName)
+                amores[amore].addEventListener("click", function (event) {
+                    var a = event.target || event.srcElement;
+                    var aparentparent = a.parentNode.parentNode;
+                    var footer = aparentparent.children[2];
+                    if (containClass(footer, "hide"))
+                        removeClass(footer, "hide")
+                    else
+                        addClass(footer, "hide")
+                });
+            }
+        })();
+       </script>
+    </body>
+</html>

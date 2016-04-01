@@ -1,0 +1,43 @@
+@media (max-height: 360px) {
+	h1 {
+		font-size: 30px;
+	}
+}
+@media (min-height: 360px) and (max-height: 480px) {
+	h1 {
+		font-size: 36px;
+	}
+	.button-home {
+		font-size: 20px;
+	}
+}
+@media (min-height: 480px) {
+	h1 {
+		font-size: 48px;
+	}
+	.button-home {
+		font-size: 28px;
+	}
+}
+@media (max-width: 640px) {
+	article {
+		position: relative;
+		background-color: #458967;
+		top: 25%;
+		left: 25%;
+		padding-top: 1%; 
+		width: 50%;
+		height: 50%;
+	}
+}
+@media (min-width: 640px) {
+	article {
+		position: relative;
+		background-color: #458967;
+		top: 25%;
+		left: 30%;
+		padding-top: 1%; 
+		width: 40%;
+		height: 50%;
+	}
+}

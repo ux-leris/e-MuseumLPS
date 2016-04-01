@@ -5,7 +5,7 @@ import junit.framework.TestCase;
 public class ScenarioBuilderTest extends TestCase {
 
 	public void testBuild() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 }

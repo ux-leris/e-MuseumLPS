@@ -41,6 +41,7 @@ public class Museum {
 	 * Class constructor.
 	 */
 	public Museum() {
+            scenarios = new ArrayList<Scenario>();
 	}
 
 	/**

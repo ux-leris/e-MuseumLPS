@@ -1,0 +1,39 @@
+@media (max-width: 640px) {
+	article {
+		position: relative;
+		background-color: #458967;
+		top: 25%;
+		left: 25%;
+		padding-top: 1%; 
+		width: 50%;
+		height: 50%;
+	}
+}
+@media (min-width: 640px) {
+	article {
+		position: relative;
+		background-color: #458967;
+		top: 25%;
+		left: 30%;
+		padding-top: 1%; 
+		width: 40%;
+		height: 50%;
+	}
+}
+h1 {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+}
+div {
+	position: relative;
+	top: 70%;
+	height: 30%;
+}
+div a {
+	display: inline-block;
+	height: 100%;
+}
+.button-home {
+	width: 50%;
+}

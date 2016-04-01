@@ -1,0 +1,265 @@
+#challenge {
+	position: absolute;
+	left: 49%;
+	bottom: 10%;
+	height: 20%;
+	width: 45%;
+	cursor: pointer;
+}
+#challenge span {
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	padding: 5% 0;
+}
+#challenge a {
+	vertical-align: middle;
+	font-size: 72px;
+	height: 100%;
+	width: 100%;
+	display: inline-block;
+}
+.button.doneAndCorrect {
+	background-color: #45aa45;
+}
+.button.doneAndCorrect:hover {
+	background-color: #56aa45;
+	background-color: #45aa45;
+}
+.button.doneAndCorrect:active {
+	background-color: #23aa45;
+	background-color: #45aa45;
+}
+.button.doneAndWrong {
+	background-color: #ab0000;
+}
+.button.doneAndWrong:hover {
+	background-color: #bc0000;
+}
+.button.doneAndWrong:active {
+	background-color: #890000;
+}
+
+#challenge-section {
+	background-color: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	z-index: 99;
+}
+#challenge-section > section {
+	position: absolute;
+	background-color: rgba(255, 255, 255, 0.9);
+	top: 10%;
+	width: 80%;
+	height: 80%;
+	margin: 0 10%;
+	border-radius: 10px;
+}
+#challenge-section header {
+    position: relative;
+}
+#challenge-section h2 {
+    font-size: 36px;
+    text-align: center;
+	margin: 1% 0;
+}
+#challenge-section > article {
+    position: relative;
+    height: 100%;
+}
+#challenge-section article section {
+    position: absolute;
+    top: 13%;
+    height: 79%;
+    left: 23%;
+    width: 54%;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+#challenge-section #challenge-alternatives {
+    position: relative;
+    height: 60%;
+    width: 100%;
+}
+#challenge-section #challenge-alternatives span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 25%;
+}
+#challenge-section div {
+    cursor: pointer;
+}
+#challenge-section article > .alternative {
+	position: absolute;
+    width: 25%;
+    height: 20%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    background-size: 100%;
+	font-size: 32px;
+	text-align: center;
+}
+#challenge-section article > .alternative:first-child {
+    top: 23%;
+    left: 15%;
+}
+#challenge-section article > .alternative:nth-child(2) {
+    top: 53%;
+    margin: 0 37%;
+}
+#challenge-section article > .alternative:last-child {
+    top: 23%;
+	right: 15%;
+}
+#challenge-section .selected {
+    border: 3px solid yellow;
+	box-shadow: 0 0 10px yellow;
+}
+#challenge-section .correct {
+    border: 3px solid green;
+	box-shadow: 0 0 10px green;
+}
+#challenge-section .wrong {
+    border: 3px solid red;
+	box-shadow: 0 0 10px red;
+}
+#challenge-section footer {
+    position: absolute;
+    height: 15%;
+	width: 100%;
+	bottom: 0;
+}
+#challenge-section footer a {
+	position: absolute;
+	height: 90%;
+	width: 40%;
+	font-size: 48px;
+}
+#challenge-section footer a:first-child {
+	left: 5%;
+}
+#challenge-section footer a:last-child {
+	right: 5%;
+}
+#challenge-section nav {
+    position: relative;
+    height: 100%;
+}
+#challenge-section #finish {
+    position: absolute;
+    top: 0;
+    left: 46%;
+    background-color: rgba(127, 127, 127, 0.7);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    height: 25px;
+    width: 50px;
+    font-size: 8px;
+    text-align: center;
+}
+#challenge-section #finish span {
+    position: absolute;
+    bottom: 5px;
+    left: 6px;
+}
+#challenge-section #cancel {
+    position: absolute;
+    top: 77px;
+    left: 46%;
+    background-color: rgba(127, 127, 127, 0.7);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    height: 25px;
+    width: 50px;
+    font-size: 8px;
+    text-align: center;
+}
+#challenge-section #cancel span {
+    position: absolute;
+    top: 5px;
+    left: 6px;
+}
+#challenge-section #back {
+    position: absolute;
+    top: 26px;
+    left: 38.5%;
+    background-color: rgba(127, 127, 127, 0.7);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 5px;
+    height: 50px;
+    width: 50px;
+}
+#challenge-section #back span {
+    position: absolute;
+    background-image: url(glyphicons-171-step-backward.png);
+    background-repeat: no-repeat;
+    margin: 14px 23px;
+    color: rgba(0, 0, 0, 0);
+}
+#challenge-section #back span:hover {
+    cursor: default;
+}
+#challenge-section #next {
+    position: absolute;
+    top: 26px;
+    left: 53.5%;
+    background-color: rgba(127, 127, 127, 0.7);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 50px;
+    height: 50px;
+    width: 50px;
+}
+#challenge-section #next span {
+    position: absolute;
+    background-image: url(glyphicons-179-step-forward.png);
+    background-repeat: no-repeat;
+    margin: 14px 16px;
+    color: rgba(0, 0, 0, 0);
+}
+#challenge-section #next span:hover {
+    cursor: default;
+}
+#challenge-section #state {
+    position: absolute;
+    top: 26px;
+    left: 46%;
+    background-color: rgba(127, 127, 127, 0.7);
+    border-radius: 5px;
+    height: 50px;
+    width: 50px;
+    font-size: 12px;
+    text-align: center;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+#challenge-section #state span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 18px;
+    padding-left: 5px;
+}
+#challenge-section .hide {
+    display: none;
+}
+#challenge-section .hide-li div {
+    border-width: 0;
+    color: #eee;
+}
+#challenge-section .hide-li div:not(.nav-sce-location):hover {
+    background-color: #eee;
+    cursor: default;
+}

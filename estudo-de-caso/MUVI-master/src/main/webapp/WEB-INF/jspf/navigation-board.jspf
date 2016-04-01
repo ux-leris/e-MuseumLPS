@@ -1,0 +1,24 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<article id="item">
+	<section>
+		<header>
+			<h1 id="title">${items.text.name}</h1>
+		</header>
+		<article id="object-text">
+			<div class="with-more">${items.text.text}</div>
+			<c:if test="${items.toKnowMore != null}">
+				<a id="amore" href="#">Saiba mais...</a>
+			</c:if>
+		</article>
+
+		<footer id="object-footer" class="hide">
+			<div id="divmore">${items.toKnowMore.text}</div>
+		</footer>
+
+	</section>
+	<img id="image" src="${items.image.urlAddress}"/>
+	<!--<small>${items.image.name}</small>-->
+	<c:if test="${navigationNode.scenario.class.name == 'com.lpsmuseum.dto.scenario.ScenarioChallenge'}">
+		<div id="challenge"><a class="button">Desafio</a></div>
+	</c:if>
+</article>
